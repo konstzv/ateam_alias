@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "424343388446",
+    "firebase_url": "https://ateam-7e2ac.firebaseio.com",
+    "project_id": "ateam-7e2ac",
+    "storage_bucket": "ateam-7e2ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424343388446:android:86fa09c73777a47e",
+        "android_client_info": {
+          "package_name": "ru.androidacademy.ateam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424343388446-vggure5um25qfbbbt10fhvfs3utksrum.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLKyCTy6EwfmHQwI74WViNkXUHLS8CXzY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

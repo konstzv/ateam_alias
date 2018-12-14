@@ -1,0 +1,110 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "ru.androidacademy.ateam"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+ext {
+
+    moxyVersion = '1.5.5'
+    retrofitVersion = '2.4.0'
+    glideVersion = '4.8.0'
+    toothpickVersion = '1.1.3'
+    room_version = "1.1.1"
+    support_version = "28.0.0"
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$support_version"
+    implementation "com.android.support:recyclerview-v7:$support_version"
+    implementation "com.android.support:cardview-v7:$support_version"
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+    //GLIDE
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+
+
+    //RETROFIT
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+
+    //RXPREMISSIONS
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+
+
+    //RXJAVA
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
+
+    //Toothpick
+    implementation "com.github.stephanenicolas.toothpick:toothpick-runtime:$toothpickVersion"
+    implementation "com.github.stephanenicolas.toothpick:smoothie:$toothpickVersion"
+    kapt "com.github.stephanenicolas.toothpick:toothpick-compiler:$toothpickVersion"
+    testImplementation "com.github.stephanenicolas.toothpick:toothpick-testing:$toothpickVersion"
+
+    //MOXY
+    implementation "com.arello-mobile:moxy-app-compat:$moxyVersion"
+    kapt "com.arello-mobile:moxy-compiler:$moxyVersion"
+
+    //ROOM
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    kapt "android.arch.persistence.room:compiler:$room_version" // use kapt for Kotlin
+
+    // optional - RxJava support for Room
+    implementation "android.arch.persistence.room:rxjava2:$room_version"
+
+    //Animation
+    implementation ("com.andkulikov:transitionseverywhere:1.8.1"){
+        exclude group: 'com.android.support'
+    }
+
+//PhotoView
+    implementation ('com.github.chrisbanes:PhotoView:2.1.2'){
+        exclude group: 'com.android.support'
+    }
+
+    //Charts
+    implementation ('com.github.PhilJay:MPAndroidChart:v3.0.3'){
+        exclude group: 'com.android.support'
+    }
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.6'
+    implementation "com.google.firebase:firebase-database:16.0.5"
+    implementation "com.google.firebase:firebase-firestore:17.1.4"
+    implementation "com.google.firebase:firebase-storage:16.0.5"
+
+}
