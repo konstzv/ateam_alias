@@ -1,19 +1,19 @@
-package ru.androidacademy.ateam
+package ru.androidacademy.ateam.model.game
 
 import kotlin.random.Random
 
 
-data class Team(val name:String,val players:List<Player>, var score:Int = 0){
+data class Team(val name:String, val players:List<Player>, var score:Int = 0){
 
     var index:Int
-    lateinit var currentPlayer:Player
+    lateinit var currentPlayer: Player
 
     init {
         index = Random.nextInt(0, players.size )
         getNextPlayer()
     }
 
-    fun getNextPlayer():Player{
+    fun getNextPlayer(): Player {
         val player = players[nextIndex()]
         currentPlayer = player
         return player

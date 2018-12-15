@@ -1,4 +1,4 @@
-package ru.androidacademy.ateam
+package ru.androidacademy.ateam.model.game
 
 import kotlin.random.Random
 
@@ -44,7 +44,7 @@ data class Game(val timeInSec: Int, val words: List<String>, var teams: List<Tea
         }
     }
 
-    fun getWinner():Team?{
+    fun getWinner(): Team?{
        return teams.maxBy { it.score }
     }
 }

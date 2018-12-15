@@ -1,8 +1,10 @@
-package ru.androidacademy.ateam
+package ru.androidacademy.ateam.presentation.presenter
 
 import android.os.CountDownTimer
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
+import ru.androidacademy.ateam.model.game.Game
+import ru.androidacademy.ateam.presentation.view.GameView
 
 enum class State {
     START, PAUSE, RESUME, END
@@ -117,7 +119,9 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
     }
 
     private fun startTimer() {
-        timer = object : CountDownTimer(currentTime * MILLIS_PER_SECOND, MILLIS_PER_SECOND) {
+        timer = object : CountDownTimer(currentTime * MILLIS_PER_SECOND,
+            MILLIS_PER_SECOND
+        ) {
             override fun onTick(millisUntilFinished: Long) {
                 currentTime = (millisUntilFinished / MILLIS_PER_SECOND).toInt()
                 val passedTime: Int = currentGame.timeInSec - currentTime

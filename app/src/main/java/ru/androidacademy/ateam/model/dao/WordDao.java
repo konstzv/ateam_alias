@@ -20,17 +20,17 @@ public interface WordDao {
     Single<List<Word>> getAllWordByDeckId(@NonNull long deckId);
 
     @Query("DELETE FROM word WHERE deckId = :deckId")
-    Single deleteById(@NonNull long deckId);
+    void deleteById(@NonNull long deckId);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    Single insert(Word word);
+    void insert(Word word);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    Single insertWordList(List<Word> list);
+    void insertWordList(List<Word> list);
 
     @Update
-    Flowable update(Word word);
+    void update(Word word);
 
     @Delete
-    Single delete(Word word);
+    void delete(Word word);
 }

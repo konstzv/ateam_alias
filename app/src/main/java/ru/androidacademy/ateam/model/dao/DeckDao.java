@@ -17,11 +17,11 @@ public interface DeckDao {
     Single<List<Deck>> getDeckById(@NonNull long deckId);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    Single insert(Deck deck);
+    void insert(Deck deck);
 
     @Update
-    Single update(Deck deck);
+    void update(Deck deck);
 
     @Delete
-    Single delete(Deck deck);
+    void delete(Deck deck);
 }

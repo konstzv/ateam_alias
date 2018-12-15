@@ -1,6 +1,8 @@
-package ru.androidacademy.ateam
+package ru.androidacademy.ateam.presentation.view
 
 import com.arellomobile.mvp.MvpView
+import ru.androidacademy.ateam.model.game.Game
+import ru.androidacademy.ateam.model.game.Round
 
 
 interface GameView:MvpView{
