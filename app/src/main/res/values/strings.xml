@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">atream</string>
+
+    <string name="start">Старт</string>
+    <string name="pause">Пауза</string>
+    <string name="resume">Продолжить</string>
+    <string name="end">Стоп</string>
 </resources>
