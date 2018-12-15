@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">atream</string>
+    <string name="word_example">клятва</string>
+    <string name="button_ok">OK</string>
+    <string name="button_skip">пропустить</string>
+    <string name="warning_sign">штраф</string>
 </resources>
