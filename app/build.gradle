@@ -103,4 +103,7 @@ dependencies {
     implementation "com.google.firebase:firebase-firestore:17.1.4"
     implementation "com.google.firebase:firebase-storage:16.0.5"
 
+    //ProgressBar
+    implementation 'me.zhanghai.android.materialprogressbar:library:1.4.2'
+
 }
