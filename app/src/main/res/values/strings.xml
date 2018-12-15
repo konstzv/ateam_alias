@@ -9,4 +9,6 @@
     <string name="pause">Пауза</string>
     <string name="resume">Продолжить</string>
     <string name="end">Стоп</string>
+
+    <string name="deck_words_label">Слов</string>
 </resources>
