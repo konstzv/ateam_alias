@@ -1,22 +1,23 @@
-package ru.androidacademy.ateam
+package ru.androidacademy.ateam.ui.fragment
 
 import android.os.Bundle
-import android.provider.UserDictionary
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.arellomobile.mvp.MvpAppCompatFragment
 import kotlinx.android.synthetic.main.pre_game_deck_choose_fragment.*
-import org.jetbrains.anko.support.v4.selector
-import org.jetbrains.anko.support.v4.toast
+import ru.androidacademy.ateam.Deck
+import ru.androidacademy.ateam.R
+
+import ru.androidacademy.ateam.ui.adapter.DecksChooseListAdapter
 
 
 class PreGameDeckChooseFragment:MvpAppCompatFragment(){
 
  val adapter = DecksChooseListAdapter()
 
-     fun showDecks( list:List<Deck>){
+     fun showDecks( list:ArrayList<Deck>){
          adapter.items = list
          adapter.notifyDataSetChanged()
     }
@@ -33,7 +34,7 @@ class PreGameDeckChooseFragment:MvpAppCompatFragment(){
         val deck = Deck()
         deck.deckName = "Андройдик"
         deck.dificult = 1
-        showDecks(listOf(deck,deck,deck))
+        showDecks(arrayListOf(deck,deck,deck))
 
     }
 }

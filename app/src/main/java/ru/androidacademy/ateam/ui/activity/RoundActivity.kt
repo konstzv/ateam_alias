@@ -5,9 +5,20 @@ import com.arellomobile.mvp.MvpAppCompatActivity
 import ru.androidacademy.ateam.ui.fragment.RoundFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import ru.androidacademy.ateam.*
+import ru.androidacademy.ateam.model.game.Game
+import ru.androidacademy.ateam.model.game.Round
+import ru.androidacademy.ateam.presentation.presenter.GamePresenter
+import ru.androidacademy.ateam.presentation.view.GameView
 
 
 class RoundActivity : MvpAppCompatActivity(), GameView {
+    override fun showRoundEnd(game: Game) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun showFinishGame(currentGame: Game) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     @InjectPresenter
     lateinit var gamePresenter: GamePresenter
@@ -54,9 +65,6 @@ class RoundActivity : MvpAppCompatActivity(), GameView {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun showRoundEnd(game: Game) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
     override fun setWordGuessed(wordsGuessed: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -66,7 +74,5 @@ class RoundActivity : MvpAppCompatActivity(), GameView {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun showFinishGame(currentGame: Game) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+
 }

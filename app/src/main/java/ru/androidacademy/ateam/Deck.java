@@ -2,7 +2,7 @@ package ru.androidacademy.ateam;
 
 public class Deck {
 
-    long deckId;
-    String deckName;
-    int dificult;
+    public long deckId;
+    public String deckName;
+    public int dificult;
 }
