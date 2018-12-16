@@ -3,8 +3,14 @@ package ru.androidacademy.ateam.presentation.presenter
 import android.os.CountDownTimer
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
+import ru.androidacademy.ateam.di.GameModule
 import ru.androidacademy.ateam.model.game.Game
+import ru.androidacademy.ateam.model.game.Player
+import ru.androidacademy.ateam.model.game.Team
 import ru.androidacademy.ateam.presentation.view.GameView
+import toothpick.Scope
+import toothpick.Toothpick
+import javax.inject.Inject
 
 enum class State {
     START, PAUSE, RESUME, END
@@ -17,41 +23,65 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
         const val MILLIS_PER_SECOND: Long = 1000
     }
 
-    lateinit var currentGame: Game
-    
+
     private var timer: CountDownTimer? = null
     private var currentTime: Int = 0
 
     lateinit var state: State
+
+    @Inject
+    lateinit var currentGame: Game
+
+    val gameScope:Scope = Toothpick.openScopes(
+       "GameScope"
+    )
+
+    init {
+        gameScope.installModules(GameModule())
+        Toothpick.inject(this,gameScope)
+
+        val player1 = Player("Оля")
+        val player2 = Player("Вавара")
+        val player3 = Player("Игнат")
+        val player4 = Player("Даша")
+        val team1 = Team("Слоники", listOf(player1,player2))
+        val team2 = Team("Дилдаки", listOf(player3,player4))
+        val words = listOf("test","test3","test4","test5")
+        currentGame.teams = listOf(team1,team2)
+        currentGame.words = words
+        currentGame.timeInSec = 10
+    }
+
+    override fun onFirstViewAttach() {
+        super.onFirstViewAttach()
+        initRound()
+    }
 
     override fun nextWord() {
         currentGame.getNextWord()?.let {
             viewState.showWord(it)
             viewState.setWordsLeft(currentGame.getWordsLeft())
         } ?: run {
-            endRound()
+            finishGame()
         }
     }
     
-    fun setGame(game: Game) {
-        currentGame = game
-    }
+
 
     private fun finishGame() {
         viewState.showFinishGame(currentGame)
     }
 
     fun initRound() {
-        if (currentGame.getWordsLeft() == 0) {
-            finishGame()
-        } else {
+
             val round = currentGame.getNextRound()
-            viewState.showRoundBegin(round)
+
             viewState.setWordsLeft(currentGame.getWordsLeft())
             viewState.setWordGuessed(round.wordsGuessed)
             viewState.showWord("")
-            viewState.setTimePassed(0, 0)
-        }
+            viewState.showRoundBegin(round)
+//            viewState.setTimePassed(0, 0)
+
     }
 
     fun startRound() {
@@ -100,13 +130,11 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
     }
 
     fun guess() {
-        if (currentGame.currentRound.skipNum != 0) {
+
             nextWord()
 
             viewState.setWordGuessed(currentGame.currentRound.wordsGuessed++)
-        } else {
 
-        }
     }
 
     fun changeState() {
@@ -134,5 +162,10 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
 
     private fun stopTimer() {
         timer?.cancel()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Toothpick.closeScope(gameScope)
     }
 }
