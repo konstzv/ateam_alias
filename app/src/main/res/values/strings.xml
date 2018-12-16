@@ -17,7 +17,7 @@
         шагов по игровому полю.\n3. Сделанные ошибки и оставшиеся необъясненными слова — штрафные очки.\n4. Квадрат, на котором стоит фишка команды, указывает номер разъясняемого слова.\n5. Проход мимо квадрата «грабежа» - в следующем раунде игра с правом на «грабёж» с 5 карточками без песочных часов.\n6. Выигрывает команда, которая придет к финишу первой.</string>
     <string name="rules_page_2">So rules, such wow! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
-    <string name="game_name">Alias. The Game</string>
+    <string name="game_name">Alias.IT Edition</string>
     <string name="new_game">Новая игра</string>
     <string name="countinue_game">Слова</string>
     <string name="rules">Правила игры</string>
