@@ -31,10 +31,10 @@ class RoundActivity : MvpAppCompatActivity(), GameView {
     }
 
     fun runFragmentRound() {
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragment_round, RoundFragment())
-            .commit()
+//        supportFragmentManager
+//            .beginTransaction()
+//            .add(R.id.fragment_round, RoundFragment())
+//            .commit()
     }
 
     override fun showRoundBegin(round: Round) {
