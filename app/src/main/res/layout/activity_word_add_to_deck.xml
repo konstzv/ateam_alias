@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_padding_8dp"
+        tools:context=".ui.activity.addword.WordAddToDeck">
+    <TextView
+            android:id="@+id/word_add_title"
+            android:gravity="center"
+            android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textSize="15sp"
+            android:text="Введите слово или слова через запятую"
+    />
+    <EditText
+            android:id="@+id/word_add_edit_text"
+            android:layout_below="@id/word_add_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <Button
+            android:id="@+id/btn_save_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+    android:text="Сохранить"/>
+
+</RelativeLayout>

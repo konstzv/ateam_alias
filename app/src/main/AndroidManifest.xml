@@ -24,6 +24,8 @@
         <activity android:name=".ui.activity.RulesActivity">
         </activity>
         <activity android:name=".ui.activity.SettingsActivity"/>
+        <activity android:name=".ui.activity.addword.ListWordActivity"/>
+        <activity android:name=".ui.activity.addword.WordAddToDeck"/>
     </application>
 
 </manifest>

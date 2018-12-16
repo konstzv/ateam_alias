@@ -9,7 +9,7 @@ import ru.androidacademy.ateam.model.tables.Word;
 
 @Database(entities = {Word.class, Deck.class}, version = 1)
 public abstract class AppDataBase extends RoomDatabase {
-    public abstract WordDao wordsDao();
+    public abstract WordDao wordDao();
     public abstract DeckDao deckDao();
 }
 
