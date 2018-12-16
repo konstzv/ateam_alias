@@ -25,6 +25,7 @@
         </activity>
         <activity android:name=".ui.activity.addword.ListWordActivity"/>
         <activity android:name=".ui.activity.addword.WordAddToDeck"/>
+        <activity android:name=".ui.activity.SettingsActivity"/>
     </application>
 
 </manifest>

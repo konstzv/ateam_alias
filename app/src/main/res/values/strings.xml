@@ -32,7 +32,7 @@
     <string name="button_finish">Конец игры!</string>
     <string name="game_finish">Игра завершена!</string>
     <string name="winner">Победила команда:</string>
-    <string name="score_summary">Счет:</string>
+    <string name="score_summary">угадав</string>
 
     <string name="first_team_name">Команда А</string>
     <string name="second_team_name">Команда Б</string>
