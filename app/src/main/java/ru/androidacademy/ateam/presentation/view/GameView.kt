@@ -22,4 +22,5 @@ interface GameView:MvpView{
     fun setWordGuessed(wordsGuessed: Int)
     fun setWordsLeft(wordsLeft: Int)
     fun showFinishGame(currentGame: Game)
+
 }

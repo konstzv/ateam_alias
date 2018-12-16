@@ -32,7 +32,7 @@
     <string name="button_finish">Конец игры!</string>
     <string name="game_finish">Игра завершена!</string>
     <string name="winner">Победила команда:</string>
-    <string name="score_summary">Счет:</string>
+    <string name="score_summary">угадав</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

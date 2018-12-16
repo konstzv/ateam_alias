@@ -15,9 +15,13 @@ import ru.androidacademy.ateam.model.game.Game
 import ru.androidacademy.ateam.model.game.Round
 import ru.androidacademy.ateam.presentation.presenter.GamePresenter
 import ru.androidacademy.ateam.presentation.view.GameView
+import ru.androidacademy.ateam.ui.fragment.GameFinishFragment
+import ru.androidacademy.ateam.ui.fragment.RoundBeginFragment
+import ru.androidacademy.ateam.ui.fragment.RoundEndFragment
 
 
 class RoundActivity : MvpAppCompatActivity(), GameView {
+
 
     @InjectPresenter
     lateinit var gamePresenter: GamePresenter
@@ -30,41 +34,44 @@ class RoundActivity : MvpAppCompatActivity(), GameView {
         setContentView(R.layout.activity_round)
 
         ok_button.setOnClickListener {
-            nextWord()
+            gamePresenter.guess()
+        }
+        skip_button.setOnClickListener {
+            gamePresenter.skip()
         }
     }
 
 
     override fun showRoundEnd(game: Game) {
-        val builder = AlertDialog.Builder(this@RoundActivity)
-        builder.setPositiveButton("Окей") { dialog, which ->
-            gamePresenter.initRound()
-
-        }.setMessage("Раунд закончен. Угадано ${game.currentRound.wordsGuessed}").show()
-
+        supportFragmentManager.beginTransaction().add(R.id.fragment_round,RoundEndFragment())
+            .addToBackStack(null).commit()
     }
 
     override fun showFinishGame(currentGame: Game) {
-        val builder = AlertDialog.Builder(this@RoundActivity)
-        builder.setPositiveButton("Окей") { _,_ ->
-            finish()
-        }.setMessage("Победили ${currentGame.getWinner()}").show()
+        supportFragmentManager.beginTransaction().add(R.id.fragment_round,GameFinishFragment())
+            .commit()
+//        val builder = AlertDialog.Builder(this@RoundActivity)
+//        builder.setPositiveButton("Окей") { _,_ ->
+//            finish()
+//        }.setMessage("Победили ${currentGame.getWinner()}").show()
     }
 
-    public fun nextWord() {
-        gamePresenter.nextWord()
-    }
+
 
 
     override fun showRoundBegin(round: Round) {
-        val builder = AlertDialog.Builder(this@RoundActivity)
-        builder.setPositiveButton("Окей") { _,_ ->
-            gamePresenter.startRound()
-        }.setMessage("Ход команды ${round.team.name}," +
-                " объясняет ${round.playerExplain.name}," +
-                " угадывает ${round.playerAnswer.name}}").show()
+//        val builder = AlertDialog.Builder(this@RoundActivity)
+//        builder.setPositiveButton("Окей") { _,_ ->
+//
+//        }.setMessage("Ход команды ${round.team.name}," +
+//                " объясняет ${round.playerExplain.name}," +
+//                " угадывает ${round.playerAnswer.name}}").show()
+        supportFragmentManager.beginTransaction().add(R.id.fragment_round,RoundBeginFragment())
+            .addToBackStack(null).commit()
+
 
     }
+
 
     override fun showWord(word: String) {
         word_tv.text = word
@@ -108,6 +115,20 @@ class RoundActivity : MvpAppCompatActivity(), GameView {
 //                (currentFragment as RoundFragment).setWordsLeft(wordsLeft)
 //            }
 //        }
+    }
+
+    fun onRoundBeginClick() {
+        onBackPressed()
+        gamePresenter.startRound()
+    }
+
+    fun onRoundEndClick() {
+        onBackPressed()
+        gamePresenter.initRound()
+    }
+
+    fun onGameFinished() {
+        finish()
     }
 
 
