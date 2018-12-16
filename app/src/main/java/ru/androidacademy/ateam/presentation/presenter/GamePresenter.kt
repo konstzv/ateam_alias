@@ -40,9 +40,9 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
 
     init {
 
-        gameScope.installModules(GameModule())
+//        gameScope.installModules(GameModule())
         Toothpick.inject(this,gameScope)
-
+        Log.d("GAME",currentGame.toString())
         Log.d("gdsf",currentGame.toString())
         val player1 = Player("Оля")
         val player2 = Player("Вавара")
@@ -53,7 +53,9 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
         val words = listOf("test","test3","test4","test5")
         currentGame.teams = listOf(team1,team2)
         currentGame.words = words
-        currentGame.timeInSec = 10
+
+
+//        currentGame.timeInSec = c
     }
 
     override fun onFirstViewAttach() {
@@ -73,6 +75,7 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
 
 
     private fun finishGame() {
+        allowClick = false
         timer?.cancel()
         state = State.END
         currentGame.currentRound.run {
@@ -88,7 +91,9 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
             viewState.setWordsLeft(currentGame.getWordsLeft())
             viewState.setWordGuessed(round.wordsGuessed)
             viewState.showWord("")
+        viewState.showSkips(round.skipNum)
             viewState.showRoundBegin(round)
+
 //            viewState.setTimePassed(0, 0)
 
     }
@@ -138,6 +143,8 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
         if (allowClick) {
             if (currentGame.currentRound.skipNum != 0) {
                 nextWord()
+                currentGame.currentRound.skipNum = currentGame.currentRound.skipNum -1
+                viewState.showSkips( currentGame.currentRound.skipNum)
             } else {
 
             }

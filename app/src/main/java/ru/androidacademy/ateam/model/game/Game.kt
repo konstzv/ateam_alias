@@ -5,7 +5,7 @@ import kotlin.random.Random
 
 class Game @Inject constructor() {
     val randomInt = Random.nextInt()
-
+    var skipNum:Int = 3
     var timeInSec: Int = 30
     var words: List<String> = emptyList()
     var teams: List<Team> = emptyList()
@@ -41,6 +41,7 @@ class Game @Inject constructor() {
     fun getNextRound(): Round {
         val team = getNextTeam()
         currentRound = Round(team, team.getNextPlayer(), team.getNextPlayer())
+        currentRound.skipNum = skipNum
         return currentRound
     }
 

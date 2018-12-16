@@ -21,6 +21,9 @@ import ru.androidacademy.ateam.ui.fragment.RoundEndFragment
 
 
 class RoundActivity : MvpAppCompatActivity(), GameView {
+    override fun showSkips(skipNum: Int) {
+        fragment_round_text_view_skips.text = "Пропусков осталось ${skipNum.toString()}"
+    }
 
 
     @InjectPresenter

@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         mButtonStart.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, RoundActivity.class);
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });
