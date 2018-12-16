@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
     <LinearLayout
             android:id="@+id/title_teams"
             android:layout_width="fill_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+
             android:orientation="horizontal" >
 
         <!--First Team-->
@@ -103,6 +104,9 @@
         </LinearLayout>
 
     </LinearLayout>
-    <Button android:text="Далее"  android:id="@+id/next" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:text="Далее" android:id="@+id/next" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="0dp" app:layout_constraintBottom_toBottomOf="parent"
+    />
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

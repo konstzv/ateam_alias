@@ -52,5 +52,9 @@ class SettingsActivity: AppCompatActivity(){
       showTeams()
     }
 
+    fun onTeamFinish() {
+        showSettings()
+    }
+
 
 }

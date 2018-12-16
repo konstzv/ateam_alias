@@ -11,7 +11,9 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.fragment_teams.*
 import kotlinx.android.synthetic.main.pre_game_deck_choose_fragment.*
+import org.jetbrains.anko.support.v4.act
 import ru.androidacademy.ateam.App
 
 import ru.androidacademy.ateam.R
@@ -53,6 +55,7 @@ class PreGameDeckChooseFragment:MvpAppCompatFragment(),SettingsView{
                 showDecks(arr)
             }
         )
+
        adapter.onDeckItemClickPublishSubject.subscribeBy {
            App.getDbInstance().wordDao().getAllWordByDeckId(it.deckId).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribeBy (
                onSuccess = {
@@ -60,6 +63,8 @@ class PreGameDeckChooseFragment:MvpAppCompatFragment(),SettingsView{
                    (activity as SettingsActivity).onCardChoosed()
                }
            )
+
+
        }
 
 

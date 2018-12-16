@@ -17,19 +17,26 @@ import android.content.Intent
 import android.util.Log
 import android.widget.Adapter
 import android.widget.EditText
+import com.arellomobile.mvp.MvpAppCompatFragment
+import com.arellomobile.mvp.presenter.InjectPresenter
 import com.bumptech.glide.Glide
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.PublishSubject
+import kotlinx.android.synthetic.main.fragment_teams.*
 import pl.aprilapps.easyphotopicker.DefaultCallback
 import pl.aprilapps.easyphotopicker.EasyImage
 import ru.androidacademy.ateam.model.game.Team
+import ru.androidacademy.ateam.presentation.presenter.SettingsPresenter
+import ru.androidacademy.ateam.presentation.view.SettingsView
 import ru.androidacademy.ateam.ui.activity.MainActivity
+import ru.androidacademy.ateam.ui.activity.SettingsActivity
 import java.io.File
 import java.util.jar.Manifest
 
 
-class TeamsFragment : Fragment() {
-
+class TeamsFragment : MvpAppCompatFragment(), SettingsView {
+    @InjectPresenter
+    lateinit var presenter: SettingsPresenter
     private lateinit var firstTeamRecyclerView: RecyclerView
     private lateinit var secondTeamRecyclerView: RecyclerView
 
@@ -141,7 +148,10 @@ class TeamsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        next.setOnClickListener{
+            (activity as SettingsActivity).onTeamFinish()
+            presenter.currentGame.teams = getTeams()
+        }
         EasyImage.configuration(view.context)
             .setImagesFolderName("EasyImage sample")
             .setCopyTakenPhotosToPublicGalleryAppFolder(true)
@@ -160,6 +170,7 @@ class TeamsFragment : Fragment() {
 
         return teams
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         super.onActivityResult(requestCode, resultCode, data)

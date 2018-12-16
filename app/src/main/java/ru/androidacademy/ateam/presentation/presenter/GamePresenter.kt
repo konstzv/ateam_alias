@@ -43,14 +43,14 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
 //        gameScope.installModules(GameModule())
         Toothpick.inject(this,gameScope)
 
-        val player1 = Player("Оля")
-        val player2 = Player("Вавара")
-        val player3 = Player("Игнат")
-        val player4 = Player("Даша")
-        val team1 = Team("Слоники", listOf(player1,player2))
-        val team2 = Team("Дилдаки", listOf(player3,player4))
+//        val player1 = Player("Оля")
+//        val player2 = Player("Вавара")
+//        val player3 = Player("Игнат")
+//        val player4 = Player("Даша")
+//        val team1 = Team("Слоники", listOf(player1,player2))
+//        val team2 = Team("Чебураторы", listOf(player3,player4))
 
-        currentGame.teams = listOf(team1,team2)
+//        currentGame.teams = listOf(team1,team2)
 
 
 
