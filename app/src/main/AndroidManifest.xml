@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="ru.androidacademy.ateam">
 
     <application
             android:name=".App"
             android:allowBackup="true"
+            android:appComponentFactory="@string/app_name"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/game_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            tools:replace="android:appComponentFactory"
-            android:appComponentFactory="@string/app_name">
+            tools:replace="android:appComponentFactory">
         <activity android:name=".ui.activity.RoundActivity"/>
         <activity android:name=".ui.activity.TeamsActivity"/>
         <activity android:name=".ui.activity.MainActivity">
@@ -24,7 +25,8 @@
         <activity android:name=".ui.activity.RulesActivity">
         </activity>
         <activity android:name=".ui.activity.addword.ListWordActivity"/>
-        <activity android:name=".ui.activity.addword.WordAddToDeck"/>
+        <activity android:name=".ui.activity.addword.WordAddToDeck">
+        </activity>
     </application>
 
 </manifest>

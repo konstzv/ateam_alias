@@ -1,41 +1,68 @@
 package ru.androidacademy.ateam.ui.activity.addword;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import io.reactivex.Completable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Action;
+import io.reactivex.schedulers.Schedulers;
+import ru.androidacademy.ateam.App;
 import ru.androidacademy.ateam.R;
+import ru.androidacademy.ateam.model.AppDataBase;
+import ru.androidacademy.ateam.model.dao.DeckDao;
+import ru.androidacademy.ateam.model.dao.WordDao;
+import ru.androidacademy.ateam.model.tables.Deck;
+import ru.androidacademy.ateam.model.tables.Word;
+
+import javax.security.auth.callback.Callback;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.Callable;
 
 public class WordAddToDeck extends AppCompatActivity {
     Button btnSave;
-    EditText saveText;
+    EditText editText;
     String temp;
-    long id;
+    AppDataBase db = App.getDbInstance();
+    WordDao wordDao = db.wordDao();
+    Word word = new Word();
+    DeckDao deckDao= db.deckDao();
+    Deck deck = new Deck();
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        id = getArguments().getLong("id");
+        setContentView(R.layout.activity_word_add_to_deck);
+
         btnSave = findViewById(R.id.btn_save_word);
-        saveText = findViewById(R.id.word_add_edit_text);
+        editText = findViewById(R.id.word_add_edit_text);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                temp = saveText.getText().toString();
-                checkString(temp);
-            }
+                temp = editText.getText().toString();
+                Completable.fromAction(new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        String[] s = checkString(temp);
+                        for (int i = 0; i< s.length; i++){
+                            word.deckId = 3;
+                            word.word = s[i];
+                            wordDao.insert(word);
+                        }
+                       deck.countWordInDeck = wordDao.getCountWordsById(3);
+                       deckDao.insert(deck);
+                    }
+                }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe();
+               }
         });
-    }
 
+    }
     private String[] checkString(String temp) {
         String[] tempStr = temp.split(",");
         for (int i = 0; i < tempStr.length; i++) {
@@ -44,6 +71,4 @@ public class WordAddToDeck extends AppCompatActivity {
         }
         return tempStr;
     }
-
-
 }

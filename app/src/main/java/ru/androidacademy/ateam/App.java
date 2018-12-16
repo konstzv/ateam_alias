@@ -252,5 +252,10 @@ public class App extends Application {
             deck.dificult = 1;
             deck.countWordInDeck = wordDao.getCountWordsById(2);
             deckDao.insert(deck);
+
+        deck.deckName = "Гори она огнем";
+        deck.dificult = 1;
+        deck.countWordInDeck = 6;
+        deckDao.insert(deck);
         }
     }
