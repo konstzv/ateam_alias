@@ -24,22 +24,22 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, TeamsActivity.class);
         startActivity(intent);
 
-//        mButtonStart = findViewById(R.id.start_new_button);
-//        mButtonRules = findViewById(R.id.rules_button);
-//
-//        mButtonStart.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v){
-//                Intent intent = new Intent(MainActivity.this, RoundActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        mButtonRules.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v){
-//                Intent intent = new Intent(MainActivity.this, RulesActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        mButtonStart = findViewById(R.id.start_new_button);
+        mButtonRules = findViewById(R.id.rules_button);
+
+        mButtonStart.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, RoundActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mButtonRules.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, RulesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
