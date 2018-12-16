@@ -8,7 +8,7 @@ class GameModule: Module() {
     init {
 
         bind(Game::class.java)
-            .to(Game::class.java).instancesInScope()
+            .to(Game::class.java).singletonInScope()
 
     }
 }
