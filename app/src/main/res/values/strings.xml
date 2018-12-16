@@ -9,6 +9,30 @@
     <string name="pause">Пауза</string>
     <string name="resume">Продолжить</string>
     <string name="end">Стоп</string>
+    <string name="rules_chapter_1">Цель игры</string>
+    <string name="rules_chapter_2">Краткие правила игры</string>
+    <string name="rules_chapter_3">Chapter 3</string>
+    <string name="rules_page_0">Разъясните слова, используя описания, синонимы и антонимы. Цель игры – помочь другому игроку или команде правильно отгадать наибольшее количество слов, прежде чем полностью пересыплется песок в песочных часах. Фишки передвигаются по игровому полю в соответствии с количеством правильно угаданных слов. Выигрывает команда, которая первой достигнет финиша!</string>
+    <string name="rules_page_1">1. Команды играют поочередно. Разъясняющий команды меняется в каждом туре.\n2. Количество разгаданных слов соответствует количеству
+        шагов по игровому полю.\n3. Сделанные ошибки и оставшиеся необъясненными слова — штрафные очки.\n4. Квадрат, на котором стоит фишка команды, указывает номер разъясняемого слова.\n5. Проход мимо квадрата «грабежа» - в следующем раунде игра с правом на «грабёж» с 5 карточками без песочных часов.\n6. Выигрывает команда, которая придет к финишу первой.</string>
+    <string name="rules_page_2">So rules, such wow! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="game_name">Alias. The Game</string>
+    <string name="new_game">Новая игра</string>
+    <string name="countinue_game">Продолжить игру</string>
+    <string name="rules">Правила игры</string>
+    <string name="help">Помощь</string>
+    <string name="button_start">Начать</string>
+    <string name="player_op">Угадывает:</string>
+    <string name="player_turn">Объяснияет:</string>
+    <string name="team_turn">Ходит команда:</string>
+    <string name="button_next">Дальше</string>
+    <string name="round_end">Раунд завершен!</string>
+    <string name="players_score">Количество очков:</string>
+    <string name="button_finish">Конец игры!</string>
+    <string name="game_finish">Игра завершена!</string>
+    <string name="winner">Победила команда:</string>
+    <string name="score_summary">Счет:</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

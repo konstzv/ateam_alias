@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="menu_button_text_size">20sp</dimen>
     <dimen name="activity_padding_8dp">8dp</dimen>
     <dimen name="padding_4dp">4dp</dimen>
 </resources>
