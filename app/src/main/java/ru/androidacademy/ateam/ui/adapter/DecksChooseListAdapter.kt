@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.deck_item.view.*
-import ru.androidacademy.ateam.Deck
+
 import ru.androidacademy.ateam.R
+import ru.androidacademy.ateam.model.tables.Deck
 
 
 class DecksChooseListAdapter(

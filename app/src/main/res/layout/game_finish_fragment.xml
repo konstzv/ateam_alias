@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.RoundActivity"
+        android:orientation="vertical"
+        android:background="@color/colorBackRound">
+
+    <TextView
+            android:id="@+id/round_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_finish"
+            android:textSize="30sp"
+            android:layout_margin="40dp"
+            android:layout_gravity="center_horizontal"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="22dp">
+
+        <TextView
+                android:id="@+id/player_turn_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/winner"
+                android:textSize="30sp"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+
+        <TextView
+                android:id="@+id/winner_team_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@tools:sample/first_names"
+                android:textSize="35sp"
+                android:layout_margin="8dp"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="22dp">
+
+        <TextView
+                android:id="@+id/player_op_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/score_summary"
+                android:textSize="30sp"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+
+        <TextView
+                android:id="@+id/player_op_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@tools:sample/date/hhmm"
+                android:textSize="35sp"
+                android:layout_margin="8dp"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatButton
+            android:id="@+id/finish_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button_finish"
+            android:textSize="20sp"
+            android:textColor="@color/colorLight"
+            android:layout_marginTop="22dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="20dp"
+            android:background="@color/colorOk"/>
+
+</LinearLayout>
