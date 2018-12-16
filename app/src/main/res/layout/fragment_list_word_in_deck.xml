@@ -4,7 +4,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="@dimen/activity_padding_8dp"
-                tools:context=".ui.activity.addword.fragment.AddWordInDeckFragment">
+                android:background="@color/colorLight"
+                tools:context=".ui.activity.addword.fragment.ListWordInDeckFragment">
 
     <TextView
             android:id="@+id/add_word_title"
@@ -24,38 +25,25 @@
             android:layout_below="@id/line1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@id/add_word_bottom_btn"
+            android:layout_above="@id/line2"
     >
 
     </android.support.v7.widget.RecyclerView>
 
     <View
+            android:id="@+id/line2"
             android:layout_width="match_parent"
             android:layout_height="4dp"
             android:background="@color/grey"
-            android:layout_above="@id/add_word_bottom_btn"
+            android:layout_above="@id/add_word_btn"
     ></View>
 
-    <LinearLayout
-            android:id="@+id/add_word_bottom_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"
-    >
         <Button
 
                 android:id="@+id/add_word_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/add_word"
+                android:layout_alignParentBottom="true"
                 android:layout_weight="1"/>
-        <Button
-                android:id="@+id/add_word_btn_save"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/add_word_save"
-                android:layout_weight="1"/>
-
-    </LinearLayout>
 </RelativeLayout>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import ru.androidacademy.ateam.R;
+import ru.androidacademy.ateam.ui.activity.addword.ListWordActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,6 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startActivity(new Intent(this, RoundActivity.class));
+        startActivity(new Intent(this, ListWordActivity.class));
     }
 }

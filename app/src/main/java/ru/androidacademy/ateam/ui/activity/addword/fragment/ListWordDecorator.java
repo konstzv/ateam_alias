@@ -5,10 +5,10 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-public class AddWordDecorator extends RecyclerView.ItemDecoration {
+public class ListWordDecorator extends RecyclerView.ItemDecoration {
     private final int offset;
 
-    public AddWordDecorator(int offset) {
+    public ListWordDecorator(int offset) {
         this.offset = offset;
     }
 

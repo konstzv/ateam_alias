@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.deck_item.view.*
-import ru.androidacademy.ateam.Deck
 import ru.androidacademy.ateam.R
+import ru.androidacademy.ateam.model.tables.Deck
 
 
 class DecksChooseListAdapter(
     var items: ArrayList<Deck> = arrayListOf()
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-     val onDeckItemClickPublishSubject = PublishSubject.create<Deck>()
+     public val onDeckItemClickPublishSubject = PublishSubject.create<Deck>()
 
 
     fun addDeck(d: Deck){
@@ -41,10 +41,11 @@ class DecksChooseListAdapter(
 
         private val name = view.deck_item_text_view_name
         //        private val level = view.deck_item_text_view_level
-        private val wordCount = view.deck_item_text_view_word_count
+        private val wordCount = view.deck_item_text_view_word_count2
 
         fun bind(d: Deck) {
             name.text = d.deckName
+            wordCount.text = d.countWordInDeck.toString()
             itemView.setOnClickListener{
                 onDeckItemClickPublishSubject.onNext(d)
             }

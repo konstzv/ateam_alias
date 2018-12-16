@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.arellomobile.mvp.MvpAppCompatFragment
 import kotlinx.android.synthetic.main.pre_game_deck_choose_fragment.*
-import ru.androidacademy.ateam.Deck
 import ru.androidacademy.ateam.R
+import ru.androidacademy.ateam.model.tables.Deck
 
 import ru.androidacademy.ateam.ui.adapter.DecksChooseListAdapter
 
