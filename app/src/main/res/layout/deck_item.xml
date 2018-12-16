@@ -25,10 +25,10 @@
                 android:id="@+id/deck_item_text_view_word_count2"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/deck_item_text_view_word_count"
+                app:layout_constraintEnd_toEndOf="@id/deck_item_text_view_word_count"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/deck_item_text_view_word_count"
-                app:layout_constraintStart_toStartOf="@+id/deck_item_text_view_word_count"/>
+                app:layout_constraintTop_toBottomOf="@id/deck_item_text_view_word_count"
+                app:layout_constraintStart_toStartOf="@id/deck_item_text_view_word_count"/>
         <TextView
                 android:id="@+id/deck_item_text_view_name"
 

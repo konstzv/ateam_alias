@@ -6,14 +6,24 @@
         android:id="@+id/fragment_round"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-
+        android:background="@color/colorBackRules"
 >
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:orientation="vertical">
 
+        <TextView
+                android:id="@+id/fragment_round_text_view_words_left2"
+
+                android:layout_width="match_parent"
+                android:text="Слов"
+                android:textColor="@color/colorLight"
+                android:textSize="20sp"
+                android:layout_gravity="start"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                android:layout_height="wrap_content"/>
         <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
 
 
@@ -43,7 +53,17 @@
             />
         </LinearLayout>
 
+        <TextView
+                android:id="@+id/fragment_round_text_view_skips"
 
+                android:layout_width="match_parent"
+
+                android:textColor="@color/colorLight"
+                android:textSize="20sp"
+                android:layout_gravity="start"
+                android:layout_margin="10dp"
+                android:padding="4dp"
+                android:layout_height="wrap_content"/>
         <include layout="@layout/progress_bar"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content">

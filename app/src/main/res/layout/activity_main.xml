@@ -35,7 +35,7 @@
                 android:id="@+id/continue_button"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
-                android:text="@string/countinue_game"
+                android:text="Слова"
                 android:textSize="@dimen/menu_button_text_size"
                 android:textColor="@color/colorLight"
                 android:layout_marginTop="10dp"

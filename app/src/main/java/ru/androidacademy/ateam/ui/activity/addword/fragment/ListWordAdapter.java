@@ -13,13 +13,13 @@ import ru.androidacademy.ateam.model.tables.Word;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddWordAdapter extends RecyclerView.Adapter<AddWordAdapter.ViewHolder> {
+public class ListWordAdapter extends RecyclerView.Adapter<ListWordAdapter.ViewHolder> {
     @NonNull
     private final List<Word> wordList = new ArrayList<>();
     @NonNull
     private final LayoutInflater inflater;
 
-    public AddWordAdapter(@NonNull Context context) {
+    public ListWordAdapter(@NonNull Context context) {
         this.inflater = LayoutInflater.from(context);
     }
 
@@ -50,6 +50,11 @@ public class AddWordAdapter extends RecyclerView.Adapter<AddWordAdapter.ViewHold
         wordList.clear();
         wordList.addAll(items);
         notifyDataSetChanged();
+    }
+
+    public void addItem(@NonNull Word word){
+        wordList.add(word);
+       notifyDataSetChanged();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
