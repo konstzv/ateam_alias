@@ -39,4 +39,7 @@
     <string name="add_word">Добавить слово</string>
     <string name="add_word_save">Сохранить</string>
     <string name="deck_words_label">Слово</string>
+    <string name="words_quantity">Всего слов:</string>
+    <string name="time_for_turn">Время на ход:</string>
+    <string name="skip_qauntity">Количество пропусков</string>
 </resources>
