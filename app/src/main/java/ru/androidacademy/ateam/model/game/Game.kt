@@ -1,19 +1,25 @@
 package ru.androidacademy.ateam.model.game
 
+import javax.inject.Inject
 import kotlin.random.Random
 
-data class Game(val timeInSec: Int, val words: List<String>, var teams: List<Team>, var rounds:List<Round>?) {
+class Game @Inject constructor() {
+    var timeInSec: Int = 30
+    var words: List<String> = emptyList()
+    var teams: List<Team> = emptyList()
+    var rounds:List<Round> = emptyList()
+
     private var currentWordIndex: Int = 0
-    private var currentTeamIndex: Int
+    private var currentTeamIndex: Int = 0
      lateinit var currentRound: Round
 
 
-    init {
+    fun setRandomTeam(){
         currentTeamIndex = Random.nextInt(0, teams.size)
     }
 
     fun getWordsLeft(): Int {
-        return words.size - 1 - currentWordIndex
+        return words.size -  currentWordIndex
     }
 
     fun getNextTeam(): Team {
@@ -37,7 +43,7 @@ data class Game(val timeInSec: Int, val words: List<String>, var teams: List<Tea
     }
 
     fun getNextWord(): String? {
-        if (currentWordIndex < words.size - 1) {
+        if (currentWordIndex < words.size) {
             return words[currentWordIndex++]
         }else{
             return null

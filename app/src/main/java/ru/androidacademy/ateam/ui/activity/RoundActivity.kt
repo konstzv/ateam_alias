@@ -1,10 +1,16 @@
 package ru.androidacademy.ateam.ui.activity
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.widget.Toast
 import com.arellomobile.mvp.MvpAppCompatActivity
-import ru.androidacademy.ateam.ui.fragment.RoundFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
-import ru.androidacademy.ateam.*
+import kotlinx.android.synthetic.main.activity_round.*
+import kotlinx.android.synthetic.main.progress_bar.*
+
+
+import ru.androidacademy.ateam.R
 import ru.androidacademy.ateam.model.game.Game
 import ru.androidacademy.ateam.model.game.Round
 import ru.androidacademy.ateam.presentation.presenter.GamePresenter
@@ -12,66 +18,96 @@ import ru.androidacademy.ateam.presentation.view.GameView
 
 
 class RoundActivity : MvpAppCompatActivity(), GameView {
-    override fun showRoundEnd(game: Game) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun showFinishGame(currentGame: Game) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
     @InjectPresenter
     lateinit var gamePresenter: GamePresenter
+
+    val currentFragment: Fragment?
+        get() = supportFragmentManager.findFragmentById(R.id.fragment_round)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_round)
 
-        runFragmentRound()
+        ok_button.setOnClickListener {
+            nextWord()
+        }
     }
 
-    fun runFragmentRound() {
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragment_round, RoundFragment())
-            .commit()
+
+    override fun showRoundEnd(game: Game) {
+        val builder = AlertDialog.Builder(this@RoundActivity)
+        builder.setPositiveButton("Окей") { dialog, which ->
+            gamePresenter.initRound()
+
+        }.setMessage("Раунд закончен. Угадано ${game.currentRound.wordsGuessed}").show()
+
     }
+
+    override fun showFinishGame(currentGame: Game) {
+        val builder = AlertDialog.Builder(this@RoundActivity)
+        builder.setPositiveButton("Окей") { _,_ ->
+            finish()
+        }.setMessage("Победили ${currentGame.getWinner()}").show()
+    }
+
+    public fun nextWord() {
+        gamePresenter.nextWord()
+    }
+
 
     override fun showRoundBegin(round: Round) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val builder = AlertDialog.Builder(this@RoundActivity)
+        builder.setPositiveButton("Окей") { _,_ ->
+            gamePresenter.startRound()
+        }.setMessage("Ход команды ${round.team.name}," +
+                " объясняет ${round.playerExplain.name}," +
+                " угадывает ${round.playerAnswer.name}}").show()
+
     }
 
     override fun showWord(word: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        word_tv.text = word
+//        currentFragment?.let {
+//            if (currentFragment  is RoundFragment){
+//                (currentFragment as RoundFragment).setWord(word)
+//            }
+//        }
+
     }
 
     override fun showMsg(msg: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun setTimePassed(current: Int, max: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        timer_progress.progress = (100 / max.toDouble() * current.toDouble()).toInt()
+//        timer_progress.progress = (Double(100)/max.toDouble())) * Double(current).toInt()
+        timer_text_view.text = (max - current).toString()
     }
 
     override fun startRound() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//        showRoundFragment()
     }
 
     override fun pauseRound() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun resumeRound() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 
     override fun setWordGuessed(wordsGuessed: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        fragment_round_text_view_words_guessed.text = "Угадано $wordsGuessed"
     }
 
     override fun setWordsLeft(wordsLeft: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        fragment_round_text_view_words_left.text = "Осталось $wordsLeft "
+//        currentFragment?.let {
+//            if (currentFragment  is RoundFragment){
+//                (currentFragment as RoundFragment).setWordsLeft(wordsLeft)
+//            }
+//        }
     }
 
 
