@@ -7,14 +7,19 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import io.reactivex.subjects.PublishSubject
 import ru.androidacademy.ateam.R
 import ru.androidacademy.ateam.model.game.Player
+import java.io.File
 
 
 class TeamsRecyclerViewAdapter(
-    private val players: ArrayList<Player>,
+     var players: ArrayList<Player>,
     private val viewgroup: ViewGroup?
 ) : RecyclerView.Adapter<TeamsRecyclerViewAdapter.ViewHolder>() {
+
+    val onDeleteClickPublisher = PublishSubject.create<Player>()
+    val onPhotoClickPublisher = PublishSubject.create<Player>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater
@@ -22,6 +27,8 @@ class TeamsRecyclerViewAdapter(
             .inflate(R.layout.player_item, parent, false)
         return ViewHolder(view)
     }
+
+
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val item = players[position]
@@ -35,18 +42,27 @@ class TeamsRecyclerViewAdapter(
                     .load(item.image)
                     .into(imageView)
             }
+
+            imageView.setOnClickListener {
+                onPhotoClickPublisher.onNext(item)
+            }
+
+            deleteView.setOnClickListener {
+                onDeleteClickPublisher.onNext(item)
+            }
         }
     }
 
     override fun getItemCount(): Int = players.size
 
-    fun addItem(player: Player) {
-        players.add(player)
+    fun update(items: ArrayList<Player>) {
+        players = items
         notifyDataSetChanged()
     }
 
     inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val nameView: TextView = view.findViewById(R.id.player_name)
         val imageView: ImageView = view.findViewById(R.id.player_image)
+        val deleteView: ImageView = view.findViewById(R.id.player_delete)
     }
 }
