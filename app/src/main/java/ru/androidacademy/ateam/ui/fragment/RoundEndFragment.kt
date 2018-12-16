@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
-import kotlinx.android.synthetic.main.activity_add_word.*
+
 import kotlinx.android.synthetic.main.round_begin_fragment.*
 import kotlinx.android.synthetic.main.round_end_fragment.*
 import ru.androidacademy.ateam.R
