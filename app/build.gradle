@@ -97,4 +97,7 @@ dependencies {
 
     //ProgressForTimer
     implementation 'me.zhanghai.android.materialprogressbar:library:1.4.2'
+    
+    //CircleIndicator
+    implementation 'me.relex:circleindicator:1.2.2'
 }

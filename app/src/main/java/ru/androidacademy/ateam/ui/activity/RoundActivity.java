@@ -9,6 +9,8 @@ import android.widget.TextView;
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 import ru.androidacademy.ateam.R;
 
+import java.util.Objects;
+
 public class RoundActivity extends AppCompatActivity {
 
     TextView mTimeTv;
@@ -21,6 +23,7 @@ public class RoundActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.now_playing);
 
         mTimeTv = findViewById(R.id.timer_text_view);
         mWordTv = findViewById(R.id.word_tv);
