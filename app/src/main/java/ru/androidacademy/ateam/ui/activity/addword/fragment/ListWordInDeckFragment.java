@@ -57,7 +57,7 @@ public class ListWordInDeckFragment extends Fragment {
         btnAddWord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((ListWordActivity) getActivity()).openWordToAdd();
+//                ((ListWordActivity) getActivity()).openWordToAdd();
 //             WordAddToDeck wordAddToDeck = WordAddToDeck.newInstance(id);
 
             }
