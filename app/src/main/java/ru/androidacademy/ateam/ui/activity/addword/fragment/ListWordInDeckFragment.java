@@ -2,6 +2,7 @@ package ru.androidacademy.ateam.ui.activity.addword.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -22,6 +23,7 @@ import ru.androidacademy.ateam.R;
 import ru.androidacademy.ateam.model.AppDataBase;
 import ru.androidacademy.ateam.model.dao.WordDao;
 import ru.androidacademy.ateam.model.tables.Word;
+import ru.androidacademy.ateam.ui.activity.MainActivity;
 import ru.androidacademy.ateam.ui.activity.addword.ListWordActivity;
 import ru.androidacademy.ateam.ui.activity.addword.WordAddToDeck;
 
@@ -59,6 +61,8 @@ public class ListWordInDeckFragment extends Fragment {
             public void onClick(View v) {
 //                ((ListWordActivity) getActivity()).openWordToAdd();
 //             WordAddToDeck wordAddToDeck = WordAddToDeck.newInstance(id);
+                Intent intent = new Intent(getContext(), WordAddToDeck.class);
+                startActivity(intent);
 
             }
         });

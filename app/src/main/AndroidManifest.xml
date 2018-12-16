@@ -23,12 +23,12 @@
         </activity>
         <activity android:name=".ui.activity.RulesActivity">
         </activity>
-<<<<<<<<< Temporary merge branch 1
+
         <activity android:name=".ui.activity.addword.ListWordActivity"/>
         <activity android:name=".ui.activity.addword.WordAddToDeck"/>
-=========
+
         <activity android:name=".ui.activity.SettingsActivity"/>
->>>>>>>>> Temporary merge branch 2
+
     </application>
 
 </manifest>
