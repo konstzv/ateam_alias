@@ -17,6 +17,5 @@ public class AddWordActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.add(R.id.fragment, addWordInDeckFragment);
         ft.commit();
-
     }
 }

@@ -34,7 +34,12 @@
     <string name="winner">Победила команда:</string>
     <string name="score_summary">Счет:</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="first_team_name">Команда А</string>
+    <string name="second_team_name">Команда Б</string>
+
+    <string name="add_player">Добавить игрока</string>
+    <string name="new_player">Новый игрок</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_word">Добавить слово</string>
     <string name="add_word_save">Сохранить</string>
