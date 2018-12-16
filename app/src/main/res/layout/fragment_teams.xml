@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+            android:id="@+id/title_teams"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+        <!--First Team-->
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="start">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="@dimen/text_size_title"
+                    android:text="@string/first_team_name"
+                    android:textStyle="bold|italic"
+                    android:padding="@dimen/padding_standart"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:padding="@dimen/padding_standart"
+                    android:background="@color/colorPrimary"/>
+
+            <Button
+                    android:id="@+id/add_player_to_first_team"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/padding_standart"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#0288D1"
+                    android:textColor="#BBDEFB"
+                    android:elevation="@dimen/padding_standart_half"
+                    android:text = "@string/add_player"
+                    android:textSize="@dimen/text_size_button"
+                    android:padding="@dimen/padding_standart"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/players_first_team"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"/>
+        </LinearLayout>
+
+        <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary" />
+
+        <!--Second Team-->
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="end">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="@dimen/text_size_title"
+                    android:text="@string/second_team_name"
+                    android:textStyle="bold|italic"
+                    android:padding="@dimen/padding_standart"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:padding="@dimen/padding_standart"
+                    android:background="@color/colorPrimary"/>
+
+            <Button
+                    android:id="@+id/add_player_to_second_team"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/padding_standart"
+                    android:text = "@string/add_player"
+                    android:background="#0288D1"
+                    android:textColor="#BBDEFB"
+                    android:elevation="@dimen/padding_standart_half"
+                    android:textSize="@dimen/text_size_button"
+                    android:padding="@dimen/padding_standart"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/players_second_team"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
