@@ -61,6 +61,8 @@ class PreGameDeckChooseFragment:MvpAppCompatFragment(),SettingsView{
                }
            )
        }
+
+
 //        pre_game_deck_choose_fragment_decs_list.layoutManager = LinearLayoutManager(context)
 //        pre_game_deck_choose_fragment_decs_list.adapter = adapter
 //        val deck = Deck()

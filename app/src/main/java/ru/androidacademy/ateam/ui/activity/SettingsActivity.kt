@@ -10,6 +10,7 @@ import ru.androidacademy.ateam.di.GameModule
 import ru.androidacademy.ateam.presentation.view.SettingsView
 import ru.androidacademy.ateam.ui.fragment.BasicSettingsFragment
 import ru.androidacademy.ateam.ui.fragment.PreGameDeckChooseFragment
+import ru.androidacademy.ateam.ui.fragment.TeamsFragment
 import toothpick.Scope
 import toothpick.Toothpick
 
@@ -35,6 +36,12 @@ class SettingsActivity: AppCompatActivity(){
             .commit()
     }
 
+    fun showTeams(){
+        supportFragmentManager.beginTransaction().replace(R.id.contrainer,TeamsFragment())
+//            .addToBackStack(null).commit()
+            .commit()
+    }
+
     fun showDescSett(){
         supportFragmentManager.beginTransaction().replace(R.id.contrainer,PreGameDeckChooseFragment())
 //            .addToBackStack(null).commit()
@@ -42,7 +49,7 @@ class SettingsActivity: AppCompatActivity(){
     }
 
     fun onCardChoosed() {
-      showSettings()
+      showTeams()
     }
 
 

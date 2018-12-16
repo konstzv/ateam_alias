@@ -22,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(MainActivity.this, TeamsActivity.class);
-        startActivity(intent);
+
 
         mButtonStart = findViewById(R.id.start_new_button);
         mButtonRules = findViewById(R.id.rules_button);
