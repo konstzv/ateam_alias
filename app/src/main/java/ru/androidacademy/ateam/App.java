@@ -6,24 +6,25 @@ import android.content.Context;
 import ru.androidacademy.ateam.model.AppDataBase;
 
 public class App extends Application {
-    public static Context appContext;
+    private static Context appContext;
+    private static App instance;
 
     private static AppDataBase appDataBase;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        appContext = this;
+        instance = this;
 
-        appDataBase = Room.databaseBuilder(this,AppDataBase.class, "database")
+        appDataBase = Room.databaseBuilder(this, AppDataBase.class, "database")
                 .build();
     }
 
-    public static Context getAppContext() {
-        return appContext;
+    public static App getInstance() {
+        return instance;
     }
 
-    public static AppDataBase getDbInstance(){
+    public static AppDataBase getDbInstance() {
         return appDataBase;
     }
 }

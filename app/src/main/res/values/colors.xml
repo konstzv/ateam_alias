@@ -6,4 +6,5 @@
     <color name="colorOk">#66bb6a</color>
     <color name="colorWrong">#c1293d</color>
     <color name="colorLight">#d7ccc8</color>
+    <color name="grey">#717171</color>
 </resources>
