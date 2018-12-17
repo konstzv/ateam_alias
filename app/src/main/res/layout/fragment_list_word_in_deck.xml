@@ -1,49 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="@dimen/activity_padding_8dp"
-                android:background="@color/colorLight"
-                tools:context=".ui.activity.addword.fragment.ListWordInDeckFragment">
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackMain"
+        tools:context=".ui.activity.addword.fragment.ListWordInDeckFragment">
 
     <TextView
+            android:padding="@dimen/activity_padding_8dp"
             android:id="@+id/add_word_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="some text"
-    />
-    <View android:id="@+id/line1"
+            tools:text="@tools:sample/first_names"/>
+
+    <View
+            android:padding="@dimen/activity_padding_8dp"
+            android:id="@+id/line1"
             android:layout_width="match_parent"
-          android:layout_below="@id/add_word_title"
-          android:layout_height="4dp"
-          android:background="@color/grey"
-    ></View>
+            android:layout_below="@id/add_word_title"
+            android:layout_height="4dp"
+            android:background="@color/colorBackTV">
+
+    </View>
+
     <android.support.v7.widget.RecyclerView
+            android:padding="@dimen/activity_padding_8dp"
             android:id="@+id/add_word_recycler"
             android:layout_below="@id/line1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/line2"
-    >
-
-    </android.support.v7.widget.RecyclerView>
+            tools:listitem="@layout/add_word_recycler_tab"/>
 
     <View
+            android:padding="@dimen/activity_padding_8dp"
             android:id="@+id/line2"
             android:layout_width="match_parent"
             android:layout_height="4dp"
-            android:background="@color/grey"
-            android:layout_above="@id/add_word_btn"
-    ></View>
+            android:background="@color/colorBackTV"
+            android:layout_above="@id/add_word_btn">
 
-        <Button
+    </View>
 
-                android:id="@+id/add_word_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/add_word"
-                android:layout_alignParentBottom="true"
-                android:layout_weight="1"/>
+    <Button
+            android:id="@+id/add_word_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_word"
+            android:background="@color/colorOk"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
 </RelativeLayout>

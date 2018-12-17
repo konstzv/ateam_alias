@@ -4,27 +4,34 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/activity_padding_8dp"
-        tools:context=".ui.activity.addword.WordAddToDeck">
+        tools:context=".ui.activity.addword.WordAddToDeck"
+        android:background="@color/colorBackMain">
+
     <TextView
             android:id="@+id/word_add_title"
             android:gravity="center"
             android:layout_width="match_parent"
-              android:layout_height="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_padding_8dp"
             android:layout_alignParentTop="true"
-            android:textSize="15sp"
-            android:text="Введите слово или слова через запятую"
-    />
+            android:textSize="18sp"
+            android:text="Введите слово или слова через запятую"/>
+
     <EditText
             android:id="@+id/word_add_edit_text"
             android:layout_below="@id/word_add_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:layout_margin="@dimen/activity_padding_8dp"
+            android:background="@color/colorBackTV"/>
     <Button
             android:id="@+id/btn_save_word"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-    android:text="Сохранить"/>
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorOk"
+            android:text="Сохранить"/>
 
 </RelativeLayout>

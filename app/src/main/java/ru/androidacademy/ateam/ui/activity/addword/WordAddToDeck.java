@@ -22,6 +22,7 @@ import javax.security.auth.callback.Callback;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.Callable;
 
 public class WordAddToDeck extends AppCompatActivity {
@@ -38,6 +39,7 @@ public class WordAddToDeck extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word_add_to_deck);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.bar_add_words);
 
         btnSave = findViewById(R.id.btn_save_word);
         editText = findViewById(R.id.word_add_edit_text);

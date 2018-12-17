@@ -6,9 +6,11 @@
     <color name="colorOk">#f9a825</color>
     <color name="colorWrong">#4f87fd</color>r>
     <color name="grey">#717171</color>
-    <color name="colorLight">#212121</color>
+    <color name="colorTextLight">#e0e0e0</color>
+    <color name="colorTextDark">#212121</color>
     <color name="colorBackMain">#a5d6a7</color>
     <color name="colorBackRound">#a5d6a7</color>
     <color name="colorBackRules">#a5d6a7</color>
     <color name="colorBackRulesPages">#a5d6a7</color>
+    <color name="colorBackTV">#c8e6c9</color>
 </resources>

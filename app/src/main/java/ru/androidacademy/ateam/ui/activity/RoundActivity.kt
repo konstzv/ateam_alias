@@ -3,6 +3,7 @@ package ru.androidacademy.ateam.ui.activity
 import android.app.AlertDialog
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.ActionBar
 import android.widget.Toast
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -18,6 +19,7 @@ import ru.androidacademy.ateam.presentation.view.GameView
 import ru.androidacademy.ateam.ui.fragment.GameFinishFragment
 import ru.androidacademy.ateam.ui.fragment.RoundBeginFragment
 import ru.androidacademy.ateam.ui.fragment.RoundEndFragment
+import java.util.*
 
 
 class RoundActivity : MvpAppCompatActivity(), GameView {
@@ -35,6 +37,7 @@ class RoundActivity : MvpAppCompatActivity(), GameView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_round)
+        Objects.requireNonNull<ActionBar>(supportActionBar).setTitle(R.string.bar_game_started)
 
         ok_button.setOnClickListener {
             gamePresenter.guess()

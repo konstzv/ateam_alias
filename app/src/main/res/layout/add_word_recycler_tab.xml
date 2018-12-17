@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <TextView
             android:id="@+id/add_word_recycler_tab_word"
             android:textSize="20sp"
-            android:text="text"
+            tools:text="@tools:sample/cities"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-    />
+            android:background="@color/colorBackTV"
+            android:padding="@dimen/activity_padding_8dp"/>
 
 </android.support.v7.widget.CardView>

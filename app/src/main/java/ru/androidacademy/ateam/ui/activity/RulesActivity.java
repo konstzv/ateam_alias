@@ -25,7 +25,7 @@ public class RulesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rules);
-        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.rules);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.bar_rules);
 
         pager = findViewById(R.id.pager);
         pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());

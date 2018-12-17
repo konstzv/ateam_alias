@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.activity.RoundActivity"
         android:orientation="vertical"
-        android:background="@color/colorBackRound">
+        android:background="@color/colorBackMain">
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:text="@string/start"
             android:textSize="20sp"
-            android:textColor="@color/colorLight"
+            android:textColor="@color/colorTextDark"
             android:layout_marginTop="22dp"
             android:layout_gravity="center_horizontal"
             android:padding="20dp"

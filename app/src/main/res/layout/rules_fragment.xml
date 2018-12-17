@@ -15,22 +15,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TextView
-                        android:id="@+id/tvRulesChapter"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:gravity="center_horizontal
-        "               android:textAppearance="?android:attr/textAppearanceLarge"
-                        tools:text="@tools:sample/lorem"/>
-                <TextView
-                        android:id="@+id/tvPage"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="20dp"
-                        android:textSize="20sp"
-                        tools:text="@tools:sample/lorem"/>
+            <TextView
+                    android:id="@+id/tvRulesChapter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:gravity="center_horizontal"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    tools:text="@tools:sample/lorem"/>
+            <TextView
+                    android:id="@+id/tvPage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="20dp"
+                    android:textSize="20sp"
+                    tools:text="@tools:sample/lorem"/>
         </LinearLayout>
-     </ScrollView>
+    </ScrollView>
 
 </LinearLayout>

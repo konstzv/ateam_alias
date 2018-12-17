@@ -43,8 +43,17 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_word">Добавить слово</string>
     <string name="add_word_save">Сохранить</string>
-    <string name="deck_words_label">Слово</string>
+    <string name="deck_words_label">Слов</string>
     <string name="words_quantity">Всего слов:</string>
     <string name="time_for_turn">Время на ход:</string>
     <string name="skip_qauntity">Количество пропусков</string>
+
+    <string name="bar_rules">Правила игры</string>
+    <string name="bar_game_started">Идет игра!</string>
+    <string name="bar_add_words">Добавление слов</string>
+    <string name="bar_deck_settings">Настройки колоды</string>
+    <string name="bar_settings">Настройки игры</string>
+    <string name="bar_team">Состав команд</string>
+    <string name="bar_word_list">Списки слов</string>
+
 </resources>

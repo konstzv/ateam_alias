@@ -2,6 +2,7 @@ package ru.androidacademy.ateam.ui.activity
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import com.arellomobile.mvp.MvpAppCompatActivity
 import org.jetbrains.anko.startActivity
@@ -13,6 +14,7 @@ import ru.androidacademy.ateam.ui.fragment.PreGameDeckChooseFragment
 import ru.androidacademy.ateam.ui.fragment.TeamsFragment
 import toothpick.Scope
 import toothpick.Toothpick
+import java.util.*
 
 
 class SettingsActivity: AppCompatActivity(){
@@ -22,6 +24,8 @@ class SettingsActivity: AppCompatActivity(){
         val gameScope: Scope = Toothpick.openScopes(
             "GameScope"
         )
+        Objects.requireNonNull<ActionBar>(supportActionBar).setTitle(R.string.bar_settings)
+
         gameScope.installModules(GameModule())
         Toothpick.inject(this,gameScope)
         setContentView(R.layout.settings_activity)

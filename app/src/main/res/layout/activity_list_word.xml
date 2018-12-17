@@ -4,10 +4,12 @@
         android:id="@+id/fragment"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/colorBackMain">
+
     <android.support.v7.widget.RecyclerView
             android:id="@+id/add_word_activity_recycler"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-    ></android.support.v7.widget.RecyclerView>
+            android:layout_height="wrap_content"/>
+
 </FrameLayout>
