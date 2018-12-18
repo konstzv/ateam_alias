@@ -1,24 +1,6 @@
 package ru.androidacademy.ateam.ui.activity.addword;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import io.reactivex.Completable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Action;
-import io.reactivex.schedulers.Schedulers;
-import ru.androidacademy.ateam.App;
-import ru.androidacademy.ateam.R;
-import ru.androidacademy.ateam.model.AppDataBase;
-import ru.androidacademy.ateam.model.dao.DeckDao;
-import ru.androidacademy.ateam.model.dao.WordDao;
-import ru.androidacademy.ateam.model.tables.Deck;
-import ru.androidacademy.ateam.model.tables.Word;
-
-import java.util.Objects;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class WordAddToDeck extends AppCompatActivity {
 //    Button btnSave;

@@ -1,22 +1,18 @@
 package ru.androidacademy.ateam.ui.fragment
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.arellomobile.mvp.MvpAppCompatActivity
-import com.arellomobile.mvp.MvpAppCompatFragment
-import com.arellomobile.mvp.presenter.InjectPresenter
 
+import com.arellomobile.mvp.presenter.InjectPresenter
 import kotlinx.android.synthetic.main.round_begin_fragment.*
 import ru.androidacademy.ateam.R
+
 import ru.androidacademy.ateam.model.game.Game
 import ru.androidacademy.ateam.presentation.presenter.RoundResultPresenter
 import ru.androidacademy.ateam.presentation.view.RoundResultView
 import ru.androidacademy.ateam.ui.activity.RoundActivity
-
-
 
 
 class RoundBeginFragment:MvpAppCompatFragment(),RoundResultView{

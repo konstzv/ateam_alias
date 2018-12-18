@@ -1,37 +1,30 @@
 package ru.androidacademy.ateam.ui.fragment
 
 import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import ru.androidacademy.ateam.R
-import ru.androidacademy.ateam.model.game.Player
-import ru.androidacademy.ateam.ui.adapter.TeamsRecyclerViewAdapter
-import android.content.DialogInterface
-import android.content.Intent
-import android.util.Log
-import android.widget.Adapter
 import android.widget.EditText
-import com.arellomobile.mvp.MvpAppCompatFragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+
 import com.arellomobile.mvp.presenter.InjectPresenter
-import com.bumptech.glide.Glide
 import io.reactivex.rxkotlin.subscribeBy
-import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.fragment_teams.*
 import pl.aprilapps.easyphotopicker.DefaultCallback
 import pl.aprilapps.easyphotopicker.EasyImage
+import ru.androidacademy.ateam.R
+import ru.androidacademy.ateam.model.game.Player
 import ru.androidacademy.ateam.model.game.Team
 import ru.androidacademy.ateam.presentation.presenter.SettingsPresenter
 import ru.androidacademy.ateam.presentation.view.SettingsView
-import ru.androidacademy.ateam.ui.activity.MainActivity
 import ru.androidacademy.ateam.ui.activity.SettingsActivity
+import ru.androidacademy.ateam.ui.adapter.TeamsRecyclerViewAdapter
 import java.io.File
-import java.util.jar.Manifest
 
 
 class TeamsFragment : MvpAppCompatFragment(), SettingsView {
@@ -53,7 +46,7 @@ class TeamsFragment : MvpAppCompatFragment(), SettingsView {
     var lastAdapterSelectedL:TeamsRecyclerViewAdapter? = null
 
     fun photo(){
-        EasyImage.openCameraForImage(this, 0)
+        EasyImage.openCameraForImage(activity, 0)
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_teams, container, false) as View

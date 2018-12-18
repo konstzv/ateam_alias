@@ -1,18 +1,13 @@
 package ru.androidacademy.ateam.presentation.presenter
 
 import android.os.CountDownTimer
-import android.util.Log
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import ru.androidacademy.ateam.di.GameModule
 import ru.androidacademy.ateam.model.game.Game
-import ru.androidacademy.ateam.model.game.Player
-import ru.androidacademy.ateam.model.game.Team
 import ru.androidacademy.ateam.presentation.view.GameView
 import toothpick.Scope
 import toothpick.Toothpick
 import javax.inject.Inject
-import kotlin.random.Random
 
 enum class State {
     START, PAUSE, RESUME, END

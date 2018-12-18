@@ -1,28 +1,7 @@
 package ru.androidacademy.ateam.ui.activity.addword;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.BiConsumer;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
-import ru.androidacademy.ateam.App;
-import ru.androidacademy.ateam.R;
-import ru.androidacademy.ateam.model.AppDataBase;
-import ru.androidacademy.ateam.model.dao.DeckDao;
-import ru.androidacademy.ateam.model.tables.Deck;
-import ru.androidacademy.ateam.ui.activity.addword.fragment.ListWordInDeckFragment;
-import ru.androidacademy.ateam.ui.adapter.DecksChooseListAdapter;
-import ru.androidacademy.ateam.ui.adapter.ItemOffsetDecoration;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ListWordActivity extends AppCompatActivity {
 //    RecyclerView recyclerView;

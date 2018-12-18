@@ -1,24 +1,19 @@
 package ru.androidacademy.ateam.ui.fragment
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.arellomobile.mvp.MvpAppCompatActivity
-import com.arellomobile.mvp.MvpAppCompatFragment
-import com.arellomobile.mvp.presenter.InjectPresenter
 
+import com.arellomobile.mvp.presenter.InjectPresenter
 import kotlinx.android.synthetic.main.game_finish_fragment.*
-import kotlinx.android.synthetic.main.round_begin_fragment.*
-import kotlinx.android.synthetic.main.round_end_fragment.*
+
 import ru.androidacademy.ateam.R
+
 import ru.androidacademy.ateam.model.game.Game
 import ru.androidacademy.ateam.presentation.presenter.RoundResultPresenter
 import ru.androidacademy.ateam.presentation.view.RoundResultView
 import ru.androidacademy.ateam.ui.activity.RoundActivity
-
-
 
 
 class GameFinishFragment: MvpAppCompatFragment(), RoundResultView {
@@ -30,7 +25,7 @@ class GameFinishFragment: MvpAppCompatFragment(), RoundResultView {
             winner_team_name_tv.text = it.name
             score.text= it.score.toString()
         }?:run{
-            team_name_tv.text = "Ничья"
+            winner_team_name_tv.text = "Ничья"
         }
 
 

@@ -1,9 +1,9 @@
 package ru.androidacademy.ateam.ui.adapter
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.deck_item.view.*
 import ru.androidacademy.ateam.R
@@ -44,8 +44,8 @@ class DecksChooseListAdapter(
         private val wordCount = view.deck_item_text_view_word_count2
 
         fun bind(d: Deck) {
-            name.text = d.deckName
-            wordCount.text = d.countWordInDeck.toString()
+            name.text = d.name
+//            wordCount.text = d.countWordInDeck.toString()
             itemView.setOnClickListener{
                 onDeckItemClickPublishSubject.onNext(d)
             }

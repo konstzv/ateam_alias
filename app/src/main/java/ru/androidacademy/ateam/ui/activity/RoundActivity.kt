@@ -1,16 +1,15 @@
 package ru.androidacademy.ateam.ui.activity
 
-import android.app.AlertDialog
+
+
+
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.ActionBar
-import android.widget.Toast
-import com.arellomobile.mvp.MvpAppCompatActivity
+import androidx.appcompat.app.ActionBar
+import androidx.fragment.app.Fragment
+
 import com.arellomobile.mvp.presenter.InjectPresenter
 import kotlinx.android.synthetic.main.activity_round.*
 import kotlinx.android.synthetic.main.progress_bar.*
-
-
 import ru.androidacademy.ateam.R
 import ru.androidacademy.ateam.model.game.Game
 import ru.androidacademy.ateam.model.game.Round
@@ -83,7 +82,7 @@ class RoundActivity : MvpAppCompatActivity(), GameView {
         word_tv.text = word
 //        currentFragment?.let {
 //            if (currentFragment  is RoundFragment){
-//                (currentFragment as RoundFragment).setWord(word)
+//                (currentFragment as RoundFragment).setWord(text)
 //            }
 //        }
 

@@ -1,14 +1,10 @@
 package ru.androidacademy.ateam.ui.activity
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.support.v7.app.ActionBar
-import android.support.v7.app.AppCompatActivity
-import com.arellomobile.mvp.MvpAppCompatActivity
-import org.jetbrains.anko.startActivity
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import ru.androidacademy.ateam.R
 import ru.androidacademy.ateam.di.GameModule
-import ru.androidacademy.ateam.presentation.view.SettingsView
 import ru.androidacademy.ateam.ui.fragment.BasicSettingsFragment
 import ru.androidacademy.ateam.ui.fragment.PreGameDeckChooseFragment
 import ru.androidacademy.ateam.ui.fragment.TeamsFragment

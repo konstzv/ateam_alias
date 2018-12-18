@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                     android:padding="@dimen/padding_standart"
                     android:background="@color/colorBackTV"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/add_player_to_first_team"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
@@ -49,7 +49,7 @@
                     android:textSize="@dimen/text_size_button"
                     android:padding="@dimen/padding_standart"/>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.widget.RecyclerView
                     android:id="@+id/players_first_team"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -85,7 +85,7 @@
                     android:padding="@dimen/padding_standart"
                     android:background="@color/colorBackTV"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/add_player_to_second_team"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
@@ -98,7 +98,7 @@
                     android:textSize="@dimen/text_size_button"
                     android:padding="@dimen/padding_standart"/>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.widget.RecyclerView
                     android:id="@+id/players_second_team"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -108,7 +108,7 @@
 
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
             android:text="Далее"
             android:id="@+id/next"
             android:layout_width="match_parent"
@@ -117,4 +117,4 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@color/colorOk"/>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

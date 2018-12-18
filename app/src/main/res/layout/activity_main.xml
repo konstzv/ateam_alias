@@ -19,7 +19,7 @@
                 android:padding="40dp"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/start_new_button"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
                 android:padding="10dp"
                 android:background="@color/colorOk"/>
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/continue_button"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
                 android:padding="10dp"
                 android:background="@color/colorOk"/>
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/rules_button"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
                 android:padding="10dp"
                 android:background="@color/colorOk"/>
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/help_button"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
