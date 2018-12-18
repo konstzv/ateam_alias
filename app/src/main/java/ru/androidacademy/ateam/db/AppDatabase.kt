@@ -1,14 +1,14 @@
 package ru.androidacademy.ateam.db
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.RoomDatabase
-import android.arch.persistence.room.TypeConverters
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import ru.androidacademy.ateam.db.dao.DeckDao
+import ru.androidacademy.ateam.db.dao.WordDao
+import ru.androidacademy.ateam.model.tables.Deck
+import ru.androidacademy.ateam.model.tables.Word
 
-import ru.androidacademy.ateam.model.dao.DeckDao
-import ru.androidacademy.ateam.model.dao.WordDao
 
-
-@Database(entities = [WordDao::class,DeckDao::class], version = 7, exportSchema = false)
+@Database(entities = [Word::class, Deck::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao

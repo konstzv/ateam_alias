@@ -1,9 +1,7 @@
 package ru.androidacademy.ateam.di
 
-import android.arch.persistence.db.SupportSQLiteDatabase
-import android.arch.persistence.room.Room
-import android.arch.persistence.room.RoomDatabase
 import android.content.Context
+import androidx.room.Room
 import ru.androidacademy.ateam.db.AppDatabase
 import toothpick.ProvidesSingletonInScope
 import javax.inject.Inject
