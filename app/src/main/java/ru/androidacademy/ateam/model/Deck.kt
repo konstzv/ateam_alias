@@ -1,4 +1,4 @@
-package ru.androidacademy.ateam.model.tables
+package ru.androidacademy.ateam.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

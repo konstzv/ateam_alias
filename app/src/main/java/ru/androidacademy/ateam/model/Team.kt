@@ -1,15 +1,15 @@
-package ru.androidacademy.ateam.model.game
+package ru.androidacademy.ateam.model
 
 import kotlin.random.Random
 
 
-data class Team(val name:String, val players:List<Player>, var score:Int = 0){
+data class Team(val name: String, val players: List<Player>, var score: Int = 0) {
 
-    var index:Int
+    var index: Int
     lateinit var currentPlayer: Player
 
     init {
-        index = Random.nextInt(0, players.size )
+        index = Random.nextInt(0, players.size)
         getNextPlayer()
     }
 
@@ -19,11 +19,11 @@ data class Team(val name:String, val players:List<Player>, var score:Int = 0){
         return player
     }
 
-    private fun nextIndex():Int{
-        if (index >= players.size - 1){
+    private fun nextIndex(): Int {
+        if (index >= players.size - 1) {
             index = 0
             return index
-        }else{
+        } else {
             index += 1
             return index
         }
