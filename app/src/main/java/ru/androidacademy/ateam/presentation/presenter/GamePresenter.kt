@@ -3,7 +3,8 @@ package ru.androidacademy.ateam.presentation.presenter
 import android.os.CountDownTimer
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import ru.androidacademy.ateam.model.game.Game
+import ru.androidacademy.ateam.App
+import ru.androidacademy.ateam.model.Game
 import ru.androidacademy.ateam.presentation.view.GameView
 import toothpick.Scope
 import toothpick.Toothpick
@@ -29,14 +30,14 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
     @Inject
     lateinit var currentGame: Game
 
-    val gameScope:Scope = Toothpick.openScopes(
-       "GameScope"
+    val gameScope: Scope = Toothpick.openScopes(
+        App.Scopes.GAME_SCOPE
     )
 
     init {
 
 //        gameScope.installModules(GameModule())
-        Toothpick.inject(this,gameScope)
+        Toothpick.inject(this, gameScope)
 
 //        val player1 = Player("Оля")
 //        val player2 = Player("Вавара")
@@ -46,7 +47,6 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
 //        val team2 = Team("Чебураторы", listOf(player3,player4))
 
 //        currentGame.teams = listOf(team1,team2)
-
 
 
 //        currentGame.timeInSec = c
@@ -67,7 +67,6 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
     }
 
 
-
     private fun finishGame() {
         allowClick = false
         timer?.cancel()
@@ -80,19 +79,19 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
 
     fun initRound() {
 
-            val round = currentGame.getNextRound()
+        val round = currentGame.getNextRound()
 
-            viewState.setWordsLeft(currentGame.getWordsLeft())
-            viewState.setWordGuessed(round.wordsGuessed)
-            viewState.showWord("")
+        viewState.setWordsLeft(currentGame.getWordsLeft())
+        viewState.setWordGuessed(round.wordsGuessed)
+        viewState.showWord("")
         viewState.showSkips(round.skipNum)
-            viewState.showRoundBegin(round)
+        viewState.showRoundBegin(round)
 
 //            viewState.setTimePassed(0, 0)
 
     }
 
-    var allowClick  = false
+    var allowClick = false
 
     fun startRound() {
         allowClick = true
@@ -137,8 +136,8 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
         if (allowClick) {
             if (currentGame.currentRound.skipNum != 0) {
                 nextWord()
-                currentGame.currentRound.skipNum = currentGame.currentRound.skipNum -1
-                viewState.showSkips( currentGame.currentRound.skipNum)
+                currentGame.currentRound.skipNum = currentGame.currentRound.skipNum - 1
+                viewState.showSkips(currentGame.currentRound.skipNum)
             } else {
 
             }
@@ -163,7 +162,8 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
     }
 
     private fun startTimer() {
-        timer = object : CountDownTimer(currentTime * MILLIS_PER_SECOND,
+        timer = object : CountDownTimer(
+            currentTime * MILLIS_PER_SECOND,
             MILLIS_PER_SECOND
         ) {
             override fun onTick(millisUntilFinished: Long) {
@@ -186,6 +186,6 @@ class GamePresenter : MvpPresenter<GameView>(), IGamePresenter {
     override fun onDestroy() {
         super.onDestroy()
         timer?.cancel()
-        Toothpick.closeScope("GameScope")
+        Toothpick.closeScope(App.Scopes.GAME_SCOPE)
     }
 }

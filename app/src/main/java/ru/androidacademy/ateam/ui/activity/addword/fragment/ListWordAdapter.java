@@ -1,15 +1,14 @@
 package ru.androidacademy.ateam.ui.activity.addword.fragment;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import ru.androidacademy.ateam.R;
-import ru.androidacademy.ateam.model.tables.Word;
+import ru.androidacademy.ateam.model.Word;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ public class ListWordAdapter extends RecyclerView.Adapter<ListWordAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        return new ViewHolder(inflater.inflate(viewType,parent, false));
+        return new ViewHolder(inflater.inflate(viewType, parent, false));
     }
 
     @Override
@@ -53,12 +52,12 @@ public class ListWordAdapter extends RecyclerView.Adapter<ListWordAdapter.ViewHo
         notifyDataSetChanged();
     }
 
-    public void addItem(@NonNull Word word){
+    public void addItem(@NonNull Word word) {
         wordList.add(word);
-       notifyDataSetChanged();
+        notifyDataSetChanged();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         @NonNull
         private final TextView word;

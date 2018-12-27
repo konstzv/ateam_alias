@@ -1,8 +1,8 @@
 package ru.androidacademy.ateam.presentation.presenter
 
 
-interface IGamePresenter{
+interface IGamePresenter {
 
-  fun nextWord()
+    fun nextWord()
 
 }

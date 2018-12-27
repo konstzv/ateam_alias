@@ -1,8 +1,8 @@
 package ru.androidacademy.ateam.ui.activity.addword.fragment;
 
 import android.graphics.Rect;
-import androidx.annotation.NonNull;
 import android.view.View;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 ;

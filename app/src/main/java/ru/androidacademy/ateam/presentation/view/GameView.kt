@@ -1,15 +1,15 @@
 package ru.androidacademy.ateam.presentation.view
 
 import com.arellomobile.mvp.MvpView
-import ru.androidacademy.ateam.model.game.Game
-import ru.androidacademy.ateam.model.game.Round
+import ru.androidacademy.ateam.model.Game
+import ru.androidacademy.ateam.model.Round
 
 
-interface GameView:MvpView{
+interface GameView : MvpView {
     fun showRoundBegin(round: Round)
-    fun showWord(word:String)
+    fun showWord(word: String)
 
-    fun showMsg(msg:String)
+    fun showMsg(msg: String)
 
     fun setTimePassed(current: Int, max: Int)
 

@@ -2,8 +2,8 @@ package ru.androidacademy.ateam.ui.adapter
 
 import android.content.Context
 import android.graphics.Rect
-import androidx.annotation.DimenRes
 import android.view.View
+import androidx.annotation.DimenRes
 import androidx.recyclerview.widget.RecyclerView
 
 

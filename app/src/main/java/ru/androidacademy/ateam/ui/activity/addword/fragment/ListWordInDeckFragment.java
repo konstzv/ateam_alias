@@ -2,6 +2,7 @@ package ru.androidacademy.ateam.ui.activity.addword.fragment;
 
 
 import androidx.fragment.app.Fragment;
+
 //
 public class ListWordInDeckFragment extends Fragment {
 //    RecyclerView recyclerView;

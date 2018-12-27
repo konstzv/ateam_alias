@@ -1,8 +1,6 @@
 package ru.androidacademy.ateam.ui.activity
 
 
-
-
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.Fragment
@@ -11,8 +9,8 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import kotlinx.android.synthetic.main.activity_round.*
 import kotlinx.android.synthetic.main.progress_bar.*
 import ru.androidacademy.ateam.R
-import ru.androidacademy.ateam.model.game.Game
-import ru.androidacademy.ateam.model.game.Round
+import ru.androidacademy.ateam.model.Game
+import ru.androidacademy.ateam.model.Round
 import ru.androidacademy.ateam.presentation.presenter.GamePresenter
 import ru.androidacademy.ateam.presentation.view.GameView
 import ru.androidacademy.ateam.ui.fragment.GameFinishFragment
@@ -48,20 +46,18 @@ class RoundActivity : MvpAppCompatActivity(), GameView {
 
 
     override fun showRoundEnd(game: Game) {
-        supportFragmentManager.beginTransaction().add(R.id.fragment_round,RoundEndFragment())
+        supportFragmentManager.beginTransaction().add(R.id.fragment_round, RoundEndFragment())
             .addToBackStack(null).commit()
     }
 
     override fun showFinishGame(currentGame: Game) {
-        supportFragmentManager.beginTransaction().add(R.id.fragment_round,GameFinishFragment())
+        supportFragmentManager.beginTransaction().add(R.id.fragment_round, GameFinishFragment())
             .commit()
 //        val builder = AlertDialog.Builder(this@RoundActivity)
 //        builder.setPositiveButton("Окей") { _,_ ->
 //            finish()
 //        }.setMessage("Победили ${currentGame.getWinner()}").show()
     }
-
-
 
 
     override fun showRoundBegin(round: Round) {
@@ -71,7 +67,7 @@ class RoundActivity : MvpAppCompatActivity(), GameView {
 //        }.setMessage("Ход команды ${round.team.name}," +
 //                " объясняет ${round.playerExplain.name}," +
 //                " угадывает ${round.playerAnswer.name}}").show()
-        supportFragmentManager.beginTransaction().add(R.id.fragment_round,RoundBeginFragment())
+        supportFragmentManager.beginTransaction().add(R.id.fragment_round, RoundBeginFragment())
             .addToBackStack(null).commit()
 
 

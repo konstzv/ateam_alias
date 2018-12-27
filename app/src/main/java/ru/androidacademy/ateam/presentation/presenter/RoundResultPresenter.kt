@@ -2,14 +2,14 @@ package ru.androidacademy.ateam.presentation.presenter
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import ru.androidacademy.ateam.model.game.Game
+import ru.androidacademy.ateam.model.Game
 import ru.androidacademy.ateam.presentation.view.RoundResultView
 import toothpick.Scope
 import toothpick.Toothpick
 import javax.inject.Inject
 
 @InjectViewState
-class RoundResultPresenter:MvpPresenter<RoundResultView>(){
+class RoundResultPresenter : MvpPresenter<RoundResultView>() {
 
     @Inject
     lateinit var currentGame: Game
@@ -20,8 +20,9 @@ class RoundResultPresenter:MvpPresenter<RoundResultView>(){
     )
 
     init {
-        Toothpick.inject(this,gameScope)
+        Toothpick.inject(this, gameScope)
     }
+
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         viewState.show(currentGame)

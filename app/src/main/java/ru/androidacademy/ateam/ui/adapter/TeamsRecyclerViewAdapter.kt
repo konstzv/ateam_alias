@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import io.reactivex.subjects.PublishSubject
 import ru.androidacademy.ateam.R
-import ru.androidacademy.ateam.model.game.Player
+import ru.androidacademy.ateam.model.Player
 
 
 class TeamsRecyclerViewAdapter(
-     var players: ArrayList<Player>,
+    var players: ArrayList<Player>,
     private val viewgroup: ViewGroup?
 ) : RecyclerView.Adapter<TeamsRecyclerViewAdapter.ViewHolder>() {
 
@@ -28,11 +28,10 @@ class TeamsRecyclerViewAdapter(
     }
 
 
-
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val item = players[position]
 
-        with (viewHolder) {
+        with(viewHolder) {
             nameView.text = item.name
 
             if (item.image != null) {

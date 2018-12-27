@@ -18,8 +18,8 @@ import kotlinx.android.synthetic.main.fragment_teams.*
 import pl.aprilapps.easyphotopicker.DefaultCallback
 import pl.aprilapps.easyphotopicker.EasyImage
 import ru.androidacademy.ateam.R
-import ru.androidacademy.ateam.model.game.Player
-import ru.androidacademy.ateam.model.game.Team
+import ru.androidacademy.ateam.model.Player
+import ru.androidacademy.ateam.model.Team
 import ru.androidacademy.ateam.presentation.presenter.SettingsPresenter
 import ru.androidacademy.ateam.presentation.view.SettingsView
 import ru.androidacademy.ateam.ui.activity.SettingsActivity
@@ -42,12 +42,13 @@ class TeamsFragment : MvpAppCompatFragment(), SettingsView {
     private var firstTeamPlayers: ArrayList<Player> = ArrayList()
     private var secondTeamPlayers: ArrayList<Player> = ArrayList()
 
-    var lastPlayerSelected:Player? = null
-    var lastAdapterSelectedL:TeamsRecyclerViewAdapter? = null
+    var lastPlayerSelected: Player? = null
+    var lastAdapterSelectedL: TeamsRecyclerViewAdapter? = null
 
-    fun photo(){
+    fun photo() {
         EasyImage.openCameraForImage(activity, 0)
     }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_teams, container, false) as View
 
@@ -55,32 +56,32 @@ class TeamsFragment : MvpAppCompatFragment(), SettingsView {
             firstTeamRecyclerView = findViewById(R.id.players_first_team)
             firstTeamRecyclerView.layoutManager = LinearLayoutManager(context)
             firstTeamAdapter = TeamsRecyclerViewAdapter(firstTeamPlayers, container)
-            firstTeamRecyclerView.adapter =  firstTeamAdapter
+            firstTeamRecyclerView.adapter = firstTeamAdapter
 
             secondTeamRecyclerView = findViewById(R.id.players_second_team)
             secondTeamRecyclerView.layoutManager = LinearLayoutManager(context)
             secondTeamAdapter = TeamsRecyclerViewAdapter(secondTeamPlayers, container)
             secondTeamRecyclerView.adapter = secondTeamAdapter
 
-            firstTeamAdapter.onDeleteClickPublisher.subscribeBy (onNext = {
+            firstTeamAdapter.onDeleteClickPublisher.subscribeBy(onNext = {
                 firstTeamPlayers.remove(it)
                 firstTeamAdapter.update(firstTeamPlayers)
 
             })
 
-            secondTeamAdapter.onDeleteClickPublisher.subscribeBy (onNext = {
+            secondTeamAdapter.onDeleteClickPublisher.subscribeBy(onNext = {
                 secondTeamPlayers.remove(it)
                 secondTeamAdapter.update(secondTeamPlayers)
             })
 
-            firstTeamAdapter.onPhotoClickPublisher.subscribeBy (onNext = {
-              lastPlayerSelected = it
+            firstTeamAdapter.onPhotoClickPublisher.subscribeBy(onNext = {
+                lastPlayerSelected = it
                 lastAdapterSelectedL = firstTeamAdapter
                 photo()
 
             })
 
-            secondTeamAdapter.onPhotoClickPublisher.subscribeBy (onNext = {
+            secondTeamAdapter.onPhotoClickPublisher.subscribeBy(onNext = {
                 lastPlayerSelected = it
                 lastAdapterSelectedL = secondTeamAdapter
                 photo()
@@ -97,7 +98,8 @@ class TeamsFragment : MvpAppCompatFragment(), SettingsView {
                 val editText = promptView.findViewById(R.id.dialog_edit_text) as EditText
                 // setup a dialog window
                 alertDialogBuilder.setCancelable(false)
-                    .setPositiveButton("OK"
+                    .setPositiveButton(
+                        "OK"
                     ) { dialog, id ->
                         run {
                             firstTeamPlayers.add(Player(editText.text.toString()))
@@ -120,7 +122,8 @@ class TeamsFragment : MvpAppCompatFragment(), SettingsView {
                 val editText = promptView.findViewById(R.id.dialog_edit_text) as EditText
                 // setup a dialog window
                 alertDialogBuilder.setCancelable(false)
-                    .setPositiveButton("OK"
+                    .setPositiveButton(
+                        "OK"
                     ) { dialog, id ->
                         run {
                             secondTeamPlayers.add(Player(editText.text.toString()))
@@ -141,7 +144,7 @@ class TeamsFragment : MvpAppCompatFragment(), SettingsView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        next.setOnClickListener{
+        next.setOnClickListener {
             (activity as SettingsActivity).onTeamFinish()
             presenter.currentGame.teams = getTeams()
         }
@@ -181,8 +184,8 @@ class TeamsFragment : MvpAppCompatFragment(), SettingsView {
 
                 lastPlayerSelected?.let { player ->
                     player.image = path
-                    lastAdapterSelectedL?.let{
-                     val i =   it.players.indexOf(player)
+                    lastAdapterSelectedL?.let {
+                        val i = it.players.indexOf(player)
                         it.players[i] = player
                         it.notifyDataSetChanged()
                     }

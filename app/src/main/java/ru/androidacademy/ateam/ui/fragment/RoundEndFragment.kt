@@ -10,27 +10,28 @@ import kotlinx.android.synthetic.main.round_end_fragment.*
 import ru.androidacademy.ateam.R
 
 
-import ru.androidacademy.ateam.model.game.Game
+import ru.androidacademy.ateam.model.Game
 import ru.androidacademy.ateam.presentation.presenter.RoundResultPresenter
 import ru.androidacademy.ateam.presentation.view.RoundResultView
 import ru.androidacademy.ateam.ui.activity.RoundActivity
 
 
-class RoundEndFragment: MvpAppCompatFragment(), RoundResultView {
+class RoundEndFragment : MvpAppCompatFragment(), RoundResultView {
     @InjectPresenter
     lateinit var presenter: RoundResultPresenter
 
     override fun show(game: Game) {
-        scores.text= game.currentRound.wordsGuessed.toString()
+        scores.text = game.currentRound.wordsGuessed.toString()
 
     }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.round_end_fragment,container,false)
+        return inflater.inflate(R.layout.round_end_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        next_button.setOnClickListener{
+        next_button.setOnClickListener {
             (activity as RoundActivity).onRoundEndClick()
         }
     }

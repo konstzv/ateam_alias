@@ -4,20 +4,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.arellomobile.mvp.MvpDelegate
+import com.arellomobile.mvp.presenter.InjectPresenter
+import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.deck_item.view.*
 import ru.androidacademy.ateam.R
-import ru.androidacademy.ateam.model.tables.Deck
+import ru.androidacademy.ateam.model.Deck
+import ru.androidacademy.ateam.presentation.presenter.DeckAdapterPresenter
+import ru.androidacademy.ateam.presentation.view.DeckAdapterView
 
 
 class DecksChooseListAdapter(
-    var items: ArrayList<Deck> = arrayListOf()
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    var items: ArrayList<Deck> = arrayListOf(),
+    mvpDelegate: MvpDelegate<*>
 
-     public val onDeckItemClickPublishSubject = PublishSubject.create<Deck>()
+) : MvpRecyclerViewViewHolderAdapter(mvpDelegate, "0"), DeckAdapterView {
+
+    @InjectPresenter
+    lateinit var deckAdaPresenter: DeckAdapterPresenter
+
+    public val onDeckItemClickPublishSubject = PublishSubject.create<Deck>()
 
 
-    fun addDeck(d: Deck){
+    fun addDeck(d: Deck) {
         items.add(d)
         notifyItemInserted(itemCount - 1)
     }
@@ -37,7 +47,9 @@ class DecksChooseListAdapter(
         (p0 as DeckHolder).bind(item)
     }
 
+
     inner class DeckHolder(view: View) : RecyclerView.ViewHolder(view) {
+
 
         private val name = view.deck_item_text_view_name
         //        private val level = view.deck_item_text_view_level
@@ -45,8 +57,13 @@ class DecksChooseListAdapter(
 
         fun bind(d: Deck) {
             name.text = d.name
-//            wordCount.text = d.countWordInDeck.toString()
-            itemView.setOnClickListener{
+            deckAdaPresenter.getDeckWordCount(d.id).subscribeBy(
+                onSuccess = {
+                    wordCount.text = it.toString()
+                }
+            )
+//            wordCount.text = d.dwordsNum.toString()
+            itemView.setOnClickListener {
                 onDeckItemClickPublishSubject.onNext(d)
             }
 
