@@ -2,8 +2,9 @@ package ru.androidacademy.ateam.db.dao
 
 
 import androidx.room.*
+import io.reactivex.Completable
 import io.reactivex.Single
-import ru.androidacademy.ateam.model.tables.Word
+import ru.androidacademy.ateam.model.Word
 
 
 @Dao
@@ -11,8 +12,8 @@ interface WordDao {
     @get:Query("SELECT * FROM Word")
     val getAll: Single<List<Word>>
 
-    @Query("SELECT COUNT(text) FROM word WHERE deckId = :deckId")
-    fun getCountByDeckId(deckId: Long): Int
+    @Query("SELECT COUNT(*) FROM word WHERE deckId = :deckId")
+    fun getCountByDeckId(deckId: Long): Single<Long>
 
     @Query("SELECT text FROM word WHERE deckId = :deckId")
     fun getTextByDeckId(deckId: Long): Single<List<String>>
@@ -27,11 +28,12 @@ interface WordDao {
     fun insert(word: Word)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(list: List<Word>)
+    fun insertAll(list: List<Word>):Completable
 
     @Update
     fun update(word: Word)
 
     @Delete
     fun delete(word: Word)
+
 }
