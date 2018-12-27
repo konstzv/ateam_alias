@@ -4,8 +4,8 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import ru.androidacademy.ateam.db.dao.DeckDao
 import ru.androidacademy.ateam.db.dao.WordDao
-import ru.androidacademy.ateam.model.tables.Deck
-import ru.androidacademy.ateam.model.tables.Word
+import ru.androidacademy.ateam.model.Deck
+import ru.androidacademy.ateam.model.Word
 
 
 @Database(entities = [Word::class, Deck::class], version = 1, exportSchema = false)
