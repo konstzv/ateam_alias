@@ -21,7 +21,6 @@ class DeckAdapterPresenter : MvpPresenter<DeckAdapterView>() {
         val gameScope: Scope = Toothpick.openScopes(
             App.Scopes.GAME_SCOPE
         )
-//        gameScope.installModules(GameModule())
         Toothpick.inject(this, gameScope)
     }
 
