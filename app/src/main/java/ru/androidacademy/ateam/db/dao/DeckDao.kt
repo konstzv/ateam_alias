@@ -19,13 +19,13 @@ interface DeckDao {
     fun getDeckById(deckId: Long): Single<List<Deck>>
 
     @Query("SELECT * FROM deck WHERE name = :deckName")
-    fun getDeckByName( deckName: String): Single<List<Deck>>
+    fun getDeckByName(deckName: String): Single<List<Deck>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(deck: Deck):Completable
+    fun insert(deck: Deck): Completable
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertDeckList(decks: List<Deck>):Completable
+    fun insertDeckList(decks: List<Deck>): Completable
 
     @Update
     fun update(deck: Deck)

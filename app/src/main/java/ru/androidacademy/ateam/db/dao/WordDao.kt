@@ -28,7 +28,7 @@ interface WordDao {
     fun insert(word: Word)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(list: List<Word>):Completable
+    fun insertAll(list: List<Word>): Completable
 
     @Update
     fun update(word: Word)
