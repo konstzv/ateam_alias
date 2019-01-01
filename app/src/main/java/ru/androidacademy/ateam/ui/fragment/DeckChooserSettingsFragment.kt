@@ -17,21 +17,24 @@ import ru.androidacademy.ateam.model.Deck
 import ru.androidacademy.ateam.presentation.presenter.SettingsPresenter
 import ru.androidacademy.ateam.presentation.view.SettingsView
 import ru.androidacademy.ateam.repositories.IDeckRepository
+import ru.androidacademy.ateam.repositories.IWordsRepository
+import ru.androidacademy.ateam.ui.activity.SettingsActivity
 import ru.androidacademy.ateam.ui.adapter.DecksChooseListAdapter
 import ru.androidacademy.ateam.ui.adapter.ItemOffsetDecoration
 import toothpick.Toothpick
 import javax.inject.Inject
 
 
-class PreGameDeckChooseFragment : MvpAppCompatFragment(), SettingsView {
+class DeckChooserSettingsFragment : MvpAppCompatFragment(), SettingsView {
     @InjectPresenter
     lateinit var presenter: SettingsPresenter
 
-//    @Inject
-//    lateinit var appDatabase: AppDatabase
-
     @Inject
     lateinit var deckRepository: IDeckRepository
+
+
+    @Inject
+    lateinit var wordRepository: IWordsRepository
 
     val adapter = DecksChooseListAdapter(mvpDelegate = mvpDelegate)
 
@@ -63,43 +66,17 @@ class PreGameDeckChooseFragment : MvpAppCompatFragment(), SettingsView {
                 arr.addAll(it)
                 showDecks(arr)
             }
-//        )
         )
-////        appDatabase.deckDao().getAll.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribeBy (
-////            onSuccess = {
-////                val arr = arrayListOf<Deck>()
-////                arr.addAll(it)
-////                showDecks(arr)
-////            }
-////        )
-////        App.getDbInstance().deckDao().allDeck.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribeBy (
-////            onSuccess = {
-////                val arr = arrayListOf<Deck>()
-////                arr.addAll(it)
-//        showDecks(arrayListOf(Deck("", 1)))
-////            }
-////        )
-////
-////       adapter.onDeckItemClickPublishSubject.subscribeBy {
-////           App.getDbInstance().wordDao().getAllWordByDeckId(it.deckId).observeOn(AndroidSchedulers.mainThread()).subscribeOn(
-////               Schedulers.io()).subscribeBy (
-////               onSuccess = {
-////                   presenter.currentGame.words = it.map { it.text }
-////                   (activity as SettingsActivity).onCardChoosed()
-////               }
-////           )
-
-
+        adapter.onDeckItemClickPublishSubject.subscribeBy { deck ->
+            wordRepository.gettWordsByDeckId(deck.id).observeOn(AndroidSchedulers.mainThread()).subscribeOn(
+                Schedulers.io()
+            ).subscribeBy(
+                onSuccess = { words ->
+                    presenter.currentGame.words = words.map { it.text }
+                    (activity as SettingsActivity).onCardChoosed()
+                }
+            )
+        }
     }
-
-
-//        pre_game_deck_choose_fragment_decs_list.layoutManager = LinearLayoutManager(context)
-//        pre_game_deck_choose_fragment_decs_list.adapter = adapter
-//        val deck = Deck()
-//        deck.deckName = "Андройдик"
-//        deck.dificult = 1
-//        showDecks(arrayListOf(deck,deck,deck))
-
-//    }
 }
 

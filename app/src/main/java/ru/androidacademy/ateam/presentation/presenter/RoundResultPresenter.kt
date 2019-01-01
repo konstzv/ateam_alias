@@ -2,6 +2,7 @@ package ru.androidacademy.ateam.presentation.presenter
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
+import ru.androidacademy.ateam.App
 import ru.androidacademy.ateam.model.Game
 import ru.androidacademy.ateam.presentation.view.RoundResultView
 import toothpick.Scope
@@ -16,7 +17,8 @@ class RoundResultPresenter : MvpPresenter<RoundResultView>() {
 
 
     val gameScope: Scope = Toothpick.openScopes(
-        "GameScope"
+       App.Scopes.GAME_SCOPE
+
     )
 
     init {

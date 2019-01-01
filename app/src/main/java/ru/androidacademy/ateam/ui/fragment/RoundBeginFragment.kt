@@ -20,6 +20,7 @@ class RoundBeginFragment : MvpAppCompatFragment(), RoundResultView {
     lateinit var presenter: RoundResultPresenter
 
     override fun show(game: Game) {
+        game.setRandomTeam()
         team_name_tv.text = game.currentRound.team.name
         player_op_name_tv.text = game.currentRound.playerAnswer.name
         player_name_tv.text = game.currentRound.playerExplain.name
