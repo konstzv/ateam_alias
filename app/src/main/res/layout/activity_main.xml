@@ -20,7 +20,7 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
 
         <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/start_new_button"
+               android:id="@+id/activity_main_button_new_game"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:text="@string/new_game"
@@ -31,40 +31,40 @@
                 android:padding="10dp"
                 android:background="@color/colorOk"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/continue_button"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:text="Слова"
-                android:textSize="@dimen/menu_button_text_size"
-                android:textColor="@color/colorTextDark"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
-                android:padding="10dp"
-                android:background="@color/colorOk"/>
+        <!--<androidx.appcompat.widget.AppCompatButton-->
+                <!--android:id="@+id/continue_button"-->
+                <!--android:layout_width="240dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Слова"-->
+                <!--android:textSize="@dimen/menu_button_text_size"-->
+                <!--android:textColor="@color/colorTextDark"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:padding="10dp"-->
+                <!--android:background="@color/colorOk"/>-->
 
-        <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/rules_button"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:text="@string/rules"
-                android:textSize="@dimen/menu_button_text_size"
-                android:textColor="@color/colorTextDark"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
-                android:padding="10dp"
-                android:background="@color/colorOk"/>
+        <!--<androidx.appcompat.widget.AppCompatButton-->
+                <!--android:id="@+id/rules_button"-->
+                <!--android:layout_width="240dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/rules"-->
+                <!--android:textSize="@dimen/menu_button_text_size"-->
+                <!--android:textColor="@color/colorTextDark"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:padding="10dp"-->
+                <!--android:background="@color/colorOk"/>-->
 
-        <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/help_button"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:text="@string/help"
-                android:textSize="@dimen/menu_button_text_size"
-                android:textColor="@color/colorTextDark"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
-                android:padding="10dp"
-                android:background="@color/colorOk"/>
+        <!--<androidx.appcompat.widget.AppCompatButton-->
+                <!--android:id="@+id/help_button"-->
+                <!--android:layout_width="240dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/help"-->
+                <!--android:textSize="@dimen/menu_button_text_size"-->
+                <!--android:textColor="@color/colorTextDark"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:padding="10dp"-->
+                <!--android:background="@color/colorOk"/>-->
 
 </LinearLayout>
