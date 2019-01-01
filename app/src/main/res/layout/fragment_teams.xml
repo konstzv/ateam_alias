@@ -49,7 +49,7 @@
                     android:textSize="@dimen/text_size_button"
                     android:padding="@dimen/padding_standart"/>
 
-            <androidx.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/players_first_team"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -98,7 +98,7 @@
                     android:textSize="@dimen/text_size_button"
                     android:padding="@dimen/padding_standart"/>
 
-            <androidx.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/players_second_team"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
